@@ -1,0 +1,47 @@
+<!doctype html>
+<html data-ng-app="AppName">
+    <head>
+        <title>AppName</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+
+        <!-- CSS from Bower Components -->
+        <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+        <!-- Add New Bower Component CSS Above -->
+
+        <!-- Main App CSS -->
+        <link href="app.css" type="text/css" rel="stylesheet">
+        <!-- Add New Component CSS Above -->
+    </head>
+    <body data-ng-controller="AppCtrl">
+
+        <data-ng-include src="'modules/nav/nav.html'"></data-ng-include>
+        <data-ng-include src="'modules/welcome/welcome.html'"></data-ng-include>
+        <data-ng-include src="'modules/about/about.html'"></data-ng-include>
+        <data-ng-include src="'modules/footer/footer.html'"></data-ng-include>
+
+        <!-- JS from Bower Components -->
+        <script src="bower_components/jquery/jquery.js"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="bower_components/underscore/underscore.js"></script>
+        <script src="bower_components/moment/moment.js"></script>
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+        <script src="bower_components/angular-animate/angular-animate.js"></script>
+        <script src="bower_components/angular-resource/angular-resource.js"></script>
+        <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+        <script src="bower_components/angular-ui-utils/ui-utils.js"></script>
+        <!-- Add New Bower Component JS Above -->
+
+        <!-- Main App JS -->
+        <script src="app.js"></script>
+        <script src="modules/nav/nav.js"></script>
+        <script src="modules/welcome/welcome.js"></script>
+        <script src="modules/about/about.js"></script>
+        <script src="modules/footer/footer.js"></script>
+        <!-- Add New Component JS Above -->
+        <script>
+
+        </script>
+    </body>
+</html>

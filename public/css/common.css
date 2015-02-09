@@ -1,0 +1,62 @@
+/*phi = 1.61803398875
+line-height(phi) = font-size * phi
+line-width = line-height(phi)^2
+*/
+html, body {
+  height: 100%;
+  width: 100%; }
+
+html {
+  font-size: 67.5%; }
+
+h1, h2, h3, h4, h5, h6 {
+  text-align: center; }
+
+header h1 {
+  margin-top: 2em; }
+
+.center-h {
+  margin: auto; }
+
+.center-v {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%); }
+
+.full-height {
+  position: relative;
+  width: 100%; }
+
+.section-title-divider {
+  width: 5%;
+  height: 0.1em;
+  margin: 0 auto 0 auto; }
+
+.section-divider {
+  width: 80%;
+  height: 0.1em;
+  margin: 0 auto 0 auto; }
+
+/* Features */
+.specialFeatureIt {
+  font-size: 2em;
+  padding-right: 0.5em; }
+
+.social-items {
+  padding-right: 1em; }
+
+.contact-feature {
+  font-size: 2em;
+  margin-bottom: 2em; }
+
+.top-margin {
+  margin-top: 3em; }
+
+/* Bootstrap */
+.navbar {
+  height: 7%; }
+
+.container {
+  padding-bottom: 5em; }

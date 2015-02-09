@@ -1,0 +1,106 @@
+/* Color Palette */
+/*****************/
+/* http://www.google.ch/design/spec/style/color.html#color-color-palette */
+/*************************************************************************/
+/* Design */
+body {
+  font-family: 'Verdana', Arial, sans-serif;
+  font-weight: 400;
+  background-color: #FFFFFF;
+  color: #9E9E9E; }
+
+h1 {
+  color: #616161; }
+
+h2, h3, h4, h5, h6 {
+  color: #00BCD4; }
+
+.overlay:before {
+  background-color: #F5F5F5;
+  /* The Fallback */
+  background-color: rgba(245, 245, 245, 0.8); }
+
+.expertise, .kunden {
+  background-color: #F5F5F5;
+  /* The Fallback */
+  background-color: rgba(245, 245, 245, 0.8); }
+
+.footer {
+  background-color: #006064;
+  /* The Fallback */
+  background-color: rgba(0, 96, 100, 0.8);
+  color: #F5F5F5; }
+
+.footer h1 {
+  color: #F5F5F5; }
+
+.normalize {
+  color: #9E9E9E; }
+
+.featureIt {
+  color: #00BCD4; }
+
+/* Links */
+a {
+  color: #00BCD4;
+  cursor: default; }
+
+a:hover {
+  text-decoration: none;
+  color: #00BCD4; }
+
+a.btn-header {
+  color: #616161;
+  border-color: #616161; }
+
+a.btn-header:hover {
+  color: #616161;
+  border-color: #00BCD4; }
+
+a.link-header {
+  color: #616161; }
+
+a.link-header:hover {
+  color: #616161; }
+
+a.social-items {
+  color: #9E9E9E; }
+
+a.social-items:hover {
+  color: #00BCD4; }
+
+.footer a {
+  color: #9E9E9E; }
+
+.footer a:hover {
+  color: #00BCD4; }
+
+/* Divider */
+.section-title-divider {
+  background-color: #00BCD4;
+  /* The Fallback */
+  background-color: #00bcd4; }
+
+.section-divider {
+  background-color: #00BCD4;
+  /* The Fallback */
+  background-color: #00bcd4; }
+
+/* Feature */
+/* Bootstrap */
+.navbar-default {
+  background-color: #ffffff;
+  /* The Fallback */
+  background-color: white; }
+
+.navbar-default .navbar-nav > li > a, .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-brand {
+  color: #9E9E9E; }
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #00BCD4; }
+
+@media screen and (max-width: 768px) {
+  .navbar-default .navbar-nav {
+    background-color: #ffffff;
+    /* The Fallback */
+    background-color: white; } }
