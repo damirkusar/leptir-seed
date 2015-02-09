@@ -7,11 +7,11 @@ app.config(function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/');
 });
 
-app.controller("AppCtrl", function ($scope) {
+app.controller("AppCtrl", function ($scope, ScrollSmooth) {
     $scope.AppName = 'AppName comes here';
-    /*$scope.scrollSmoothToElementId = function (elementId) {
+    $scope.scrollSmoothToElementId = function (elementId) {
         ScrollSmooth.toElementId(elementId);
-    };*/
+    };
 });
 
 
