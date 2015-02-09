@@ -35,8 +35,7 @@ h2, h3, h4, h5, h6 {
     @include background-opacity($primary-100, 0.8);
 }
 
-.expertise,
-.kunden {
+#footer{
     @include background-opacity($primary-100, 0.8);
 }
 
@@ -107,17 +106,7 @@ a.social-items:hover{
     @include background-opacity($secondary-500, 1);
 }
 
-.section-divider {
-    @include background-opacity($secondary-500, 1);
-}
-
-/* Feature */
-.specialFeatureIt {
-}
-
 /* Bootstrap */
-.navbar-brand {
-}
 
 .navbar-default  {
     @include background-opacity(#ffffff, 1);
