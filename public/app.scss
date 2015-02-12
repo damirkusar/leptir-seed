@@ -1,8 +1,8 @@
-@import "partials/nav/nav";
-@import "partials/footer/footer";
+@import "common/partials/nav/css/nav";
+@import "common/partials/footer/css/footer";
 
-@import "modules/welcome/welcome";
-@import "modules/page1/page1";
+@import "modules/welcome/css/welcome";
+@import "modules/page1/css/page1";
 
 @import "common/css/common";
 @import "common/css/design";

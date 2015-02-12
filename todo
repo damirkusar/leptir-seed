@@ -1,6 +1,5 @@
 - add service for menu
 - add gulp
 - Internationalisation
-- Adapt setup of angular modules with a config and with register
 - Unit tests
 - ES6?
