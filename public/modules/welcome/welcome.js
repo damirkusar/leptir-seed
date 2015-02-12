@@ -5,5 +5,5 @@ welcome.config(function($stateProvider) {
 });
 
 welcome.controller('WelcomeCtrl',function($scope){
-    $scope.WelcomeTest = "Remove me in WelcomeCtrl";
+    $scope.WelcomeTest = "Modify me in Welcome Module";
 });

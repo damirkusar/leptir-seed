@@ -5,5 +5,5 @@ about.config(function($stateProvider) {
 });
 
 about.controller('AboutCtrl',function($scope){
-    $scope.AboutTest = "Remove me in AboutCtrl";
+    $scope.AboutTest = "Modify me in About Module";
 });

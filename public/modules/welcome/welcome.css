@@ -2,8 +2,7 @@
   position: relative;
   background: #ffffff url("modules/welcome/img/header_1200x800.jpg") repeat;
   background-size: 100% 100%;
-  width: 100%;
-  height: 80%;
+  height: 80vh;
   overflow: hidden; }
 
 .overlay:before {

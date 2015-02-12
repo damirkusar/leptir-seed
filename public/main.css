@@ -2,8 +2,7 @@
   position: relative;
   background: #ffffff url("modules/welcome/img/header_1200x800.jpg") repeat;
   background-size: 100% 100%;
-  width: 100%;
-  height: 80%;
+  height: 80vh;
   overflow: hidden; }
 
 .overlay:before {
@@ -17,13 +16,16 @@
 #welcome * {
   position: relative; }
 
+#page1 {
+  background-color: #000000; }
+
 /*phi = 1.61803398875
 line-height(phi) = font-size * phi
 line-width = line-height(phi)^2
 */
 html, body {
-  height: 100%;
-  width: 100%; }
+  height: 100vh;
+  width: 100vw; }
 
 html {
   font-size: 67.5%; }
@@ -71,8 +73,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .full-height {
   position: relative;
-  width: 100%;
-  height: 100%; }
+  width: 100vw;
+  height: 100vh; }
 
 .section-title-divider {
   width: 5%;
@@ -108,7 +110,7 @@ h2, h3, h4, h5, h6 {
   /* The Fallback */
   background-color: rgba(245, 245, 245, 0.8); }
 
-#footer {
+#about, #footer {
   background-color: #F5F5F5;
   /* The Fallback */
   background-color: rgba(245, 245, 245, 0.8); }

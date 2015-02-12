@@ -5,5 +5,5 @@ nav.config(function($stateProvider) {
 });
 
 nav.controller('NavCtrl',function($scope){
-    $scope.NavTest = "Remove me in NavCtrl";
+    $scope.NavTest = "Modify me in Nav Module";
 });

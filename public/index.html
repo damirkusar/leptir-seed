@@ -10,14 +10,13 @@
         <!-- Add New Bower Component CSS Above -->
 
         <!-- Main App CSS -->
-        <link href="app.css" type="text/css" rel="stylesheet">
+        <link href="main.css" type="text/css" rel="stylesheet">
         <!-- Add New Component CSS Above -->
     </head>
     <body data-ng-controller="AppCtrl">
 
         <data-ng-include src="'modules/nav/nav.html'"></data-ng-include>
-        <data-ng-include src="'modules/welcome/welcome.html'"></data-ng-include>
-        <data-ng-include src="'modules/about/about.html'"></data-ng-include>
+        <div ui-view></div>
         <data-ng-include src="'modules/footer/footer.html'"></data-ng-include>
 
         <!-- JS from Bower Components -->
@@ -34,12 +33,13 @@
         <!-- Add New Bower Component JS Above -->
 
         <!-- Main App JS -->
-        <script src="app.js"></script>
+        <script src="main.js"></script>
         <script src="services/ScrollToElement.js"></script>
         <script src="modules/nav/nav.js"></script>
         <script src="modules/welcome/welcome.js"></script>
         <script src="modules/about/about.js"></script>
         <script src="modules/footer/footer.js"></script>
+        <script src="modules/page1/page1.js"></script>
         <!-- Add New Component JS Above -->
         <script>
 

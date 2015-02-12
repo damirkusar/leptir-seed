@@ -12,8 +12,8 @@ line-width = line-height(phi)^2
 }
 
 html, body {
-    height: 100%;
-    width: 100%;
+    height: 100vh;
+    width: 100vw;
 }
 
 html {
@@ -69,8 +69,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .full-height {
     position: relative;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
 }
 
 .section-title-divider {
