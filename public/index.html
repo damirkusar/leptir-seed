@@ -15,9 +15,9 @@
     </head>
     <body data-ng-controller="AppCtrl">
 
-        <data-ng-include src="'modules/nav/nav.html'"></data-ng-include>
+        <div ui-view="nav"></div>
         <div ui-view></div>
-        <data-ng-include src="'modules/footer/footer.html'"></data-ng-include>
+        <div ui-view="footer"></div>
 
         <!-- JS from Bower Components -->
         <script src="bower_components/jquery/jquery.js"></script>

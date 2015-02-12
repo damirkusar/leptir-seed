@@ -1,4 +1,5 @@
 var scrollSmoothToElementId;
+var scrollSmoothToTop;
 jQuery(document).ready(function () {
     scrollSmoothToElementId = function(elementId){
         jQuery('html, body').animate({
@@ -6,12 +7,22 @@ jQuery(document).ready(function () {
         }, 500);
         return false;
     };
+
+    scrollSmoothToTop = function(){
+        jQuery('html, body').animate({
+             scrollTop: jQuery('body').scrollTop(0)
+        }, 500);
+        return false;
+    }
 });
 
 angular.module('AppName').factory('ScrollSmooth',function() {
     return {
         toElementId: function (elementId) {
             scrollSmoothToElementId(elementId);
+        },
+        toTop: function () {
+            scrollSmoothToTop();
         }
     };
 });
