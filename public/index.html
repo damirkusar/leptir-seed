@@ -10,14 +10,14 @@
         <!-- Add New Bower Component CSS Above -->
 
         <!-- Main App CSS -->
-        <link href="main.css" type="text/css" rel="stylesheet">
-        <!-- Add New Component CSS Above -->
+        <link href="app.css" type="text/css" rel="stylesheet">
+        <!-- End -->
     </head>
     <body data-ng-controller="AppCtrl">
 
-        <data-ng-include src="'modules/nav/nav.html'"></data-ng-include>
+        <div ui-view="nav"></div>
         <div ui-view></div>
-        <data-ng-include src="'modules/footer/footer.html'"></data-ng-include>
+        <div ui-view="footer"></div>
 
         <!-- JS from Bower Components -->
         <script src="bower_components/jquery/jquery.js"></script>
@@ -32,17 +32,19 @@
         <script src="bower_components/angular-ui-utils/ui-utils.js"></script>
         <!-- Add New Bower Component JS Above -->
 
-        <!-- Main App JS -->
-        <script src="main.js"></script>
-        <script src="services/ScrollToElement.js"></script>
-        <script src="modules/nav/nav.js"></script>
-        <script src="modules/welcome/welcome.js"></script>
-        <script src="modules/about/about.js"></script>
-        <script src="modules/footer/footer.js"></script>
-        <script src="modules/page1/page1.js"></script>
+        <!-- Core JS -->
+        <script src="app.js"></script>
+        <script src="common/services/ScrollToElement.js"></script>
         <!-- Add New Component JS Above -->
-        <script>
 
-        </script>
+        <!-- Modules JS -->
+        <script src="modules/welcome/welcome.module.js"></script>
+        <script src="modules/page1/page1.module.js"></script>
+        <!-- Add New Component JS Above -->
+
+        <!-- Partials JS -->
+        <script src="partials/footer/footer.controller.js"></script>
+        <script src="partials/nav/nav.controller.js"></script>
+        <!-- Add New Component JS Above -->
     </body>
 </html>
