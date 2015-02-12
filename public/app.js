@@ -21,7 +21,8 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                     templateUrl: "partials/footer/footer.html"
                 }
             }
-        });
+        }
+    );
 });
 
 app.controller("AppCtrl", function ($scope, ScrollSmooth) {
