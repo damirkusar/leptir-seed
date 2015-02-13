@@ -3,3 +3,15 @@
 - Internationalisation
 - Unit tests
 - ES6?
+
+
+-> blog about: {
+	config
+	nested UI-Views with view@parent
+	scroll smooth with angular
+	add js files to body 
+	add css files to head
+	service for menu
+	gulp
+	internationalization
+}
