@@ -18,6 +18,7 @@
     "gulp-util": "^3.0.4",
     "http-server": "^0.6.1",
     "node-sass": "~2.0.0-beta",
+    "run-sequence": "^1.0.2",
     "shelljs": "^0.2.6",
     "tiny-lr": "^0.1.5"
   },

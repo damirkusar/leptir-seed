@@ -5,7 +5,8 @@ var gulp = require('gulp'),
     concat = require('gulp-concat'),
     clean = require('gulp-clean'),
     sass = require('gulp-sass'),
-    autoprefixer = require('gulp-autoprefixer');
+    autoprefixer = require('gulp-autoprefixer'),
+    runSequence = require('run-sequence');
 
 var embedlr = require('gulp-embedlr'),
     refresh = require('gulp-livereload'),
@@ -28,7 +29,7 @@ server.all('/*', function (req, res) {
 
 // Clean task
 gulp.task('clean', function() {
-    gulp.src('./dist/', { read: false }) // much faster
+    return gulp.src('./dist/', { read: false }) // much faster
         .pipe(clean());
 });
 
@@ -180,4 +181,10 @@ gulp.task('dev', [], function() {
     gulp.run('watch');
 });
 
-gulp.task('build', ['clean', 'views', 'styles', 'img','bower' ,'lint', 'javascript'], function() { });
+gulp.task('build', function() {
+    runSequence(
+        'clean',
+        ['views', 'styles', 'img','lint', 'javascript'],
+        'bower'
+    );
+});
