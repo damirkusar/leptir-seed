@@ -1,26 +1,24 @@
 var gulp = require('gulp'),
-    gutil = require('gulp-util'),
     jshint = require('gulp-jshint'),
     browserify = require('gulp-browserify'),
     concat = require('gulp-concat'),
     clean = require('gulp-clean'),
     sass = require('gulp-sass'),
-    autoprefixer = require('gulp-autoprefixer'),
+    autoPrefixer = require('gulp-autoprefixer'),
     runSequence = require('run-sequence');
 
-var embedlr = require('gulp-embedlr'),
+var express = require('express'),
     refresh = require('gulp-livereload'),
-    lrserver = require('tiny-lr')(),
-    express = require('express'),
-    livereload = require('connect-livereload'),
-    livereloadport = 35729,
-    serverport = 5000;
+    lrServer = require('tiny-lr')(),
+    liveReload = require('connect-livereload'),
+    liveReloadPort = 35729,
+    serverPort = 5000;
 
 // Set up an express server (but not starting it yet)
 var server = express();
 // Add live reload
-server.use(livereload({port: livereloadport}));
-// Use our 'dist' folder as rootfolder
+server.use(liveReload({port: liveReloadPort}));
+// Use our 'dist' folder as rootFolder
 server.use(express.static('./dist'));
 // Because I like HTML5 pushstate .. this redirects everything back to our index.html
 server.all('/*', function (req, res) {
@@ -28,8 +26,8 @@ server.all('/*', function (req, res) {
 });
 
 // Clean task
-gulp.task('clean', function() {
-    return gulp.src('./dist/', { read: false }) // much faster
+gulp.task('clean', function () {
+    return gulp.src('./dist/', {read: false}) // much faster
         .pipe(clean());
 });
 
@@ -47,15 +45,19 @@ gulp.task('lint', function () {
         .pipe(jshint.reporter('default'));
 });
 
-gulp.task('styles', function() {
+gulp.task('styles', function () {
     gulp.src('public/*.scss')
         // The onerror handler prevents Gulp from crashing when you make a mistake in your SASS
-        .pipe(sass({onError: function(e) { console.log(e); } }))
-        // Optionally add autoprefixer
-        .pipe(autoprefixer("last 2 versions", "> 1%", "ie 8"))
+        .pipe(sass({
+            onError: function (e) {
+                console.log(e);
+            }
+        }))
+        // Optionally add autoPrefixer
+        .pipe(autoPrefixer("last 2 versions", "> 1%", "ie 8"))
         // These last two should look familiar now :)
         .pipe(gulp.dest('dist/'))
-        .pipe(refresh(lrserver));
+        .pipe(refresh(lrServer));
 });
 
 // Browserify task
@@ -86,47 +88,47 @@ gulp.task('browserify', function () {
 gulp.task('views', function () {
     gulp.src('./public/index.html')
         .pipe(gulp.dest('dist/'))
-        .pipe(refresh(lrserver)); // Tell the lrserver to refresh;
+        .pipe(refresh(lrServer)); // Tell the lrServer to refresh;
 
     gulp.src('./public/modules/**/views/*')
         .pipe(gulp.dest('dist/modules/'))
-        .pipe(refresh(lrserver)); // Tell the lrserver to refresh;
+        .pipe(refresh(lrServer)); // Tell the lrServer to refresh;
 
     gulp.src('./public/common/partials/**/views/*')
         // Will be put in the dist/views folder
         .pipe(gulp.dest('dist/common/partials/'))
-        .pipe(refresh(lrserver)); // Tell the lrserver to refresh;
+        .pipe(refresh(lrServer)); // Tell the lrServer to refresh;
 });
 
 // JS task
 gulp.task('javascript', function () {
     gulp.src('./public/common/js/*.js')
         .pipe(gulp.dest('dist/common/js/'))
-        .pipe(refresh(lrserver)); // Tell the lrserver to refresh;
+        .pipe(refresh(lrServer)); // Tell the lrServer to refresh;
 
     gulp.src([
         './public/common/partials/**/*.js',
         './public/common/partials/**/js/*.js'
     ])
         .pipe(gulp.dest('dist/common/partials'))
-        .pipe(refresh(lrserver)); // Tell the lrserver to refresh;
+        .pipe(refresh(lrServer)); // Tell the lrServer to refresh;
 
     gulp.src([
         './public/common/services/**/*.js'
     ])
         .pipe(gulp.dest('dist/common/services'))
-        .pipe(refresh(lrserver)); // Tell the lrserver to refresh;
+        .pipe(refresh(lrServer)); // Tell the lrServer to refresh;
 
     gulp.src('./public/config/*.js')
         .pipe(gulp.dest('dist/config/'))
-        .pipe(refresh(lrserver)); // Tell the lrserver to refresh;
+        .pipe(refresh(lrServer)); // Tell the lrServer to refresh;
 
     gulp.src([
         './public/modules/**/*.js',
         './public/modules/**/js/*.js'
     ])
         .pipe(gulp.dest('dist/modules/'))
-        .pipe(refresh(lrserver)); // Tell the lrserver to refresh;
+        .pipe(refresh(lrServer)); // Tell the lrServer to refresh;
 });
 
 // Img task
@@ -148,6 +150,11 @@ gulp.task('bower', function () {
 });
 
 gulp.task('watch', ['lint'], function () {
+    // Start webserver
+    server.listen(serverPort);
+    // Start live reload
+    refresh.listen(liveReloadPort);
+
     gulp.watch([
         './public/common/js/*.js',
         './public/common/partials/**/*.js',
@@ -168,23 +175,16 @@ gulp.task('watch', ['lint'], function () {
         'styles'
     ]);
 
-    gulp.watch('./dist/**').on('change', refresh.changed);
+    //gulp.watch('./dist/**').on('change', refresh.changed);
 });
 
-gulp.task('default', ['dev']);
-gulp.task('dev', [], function() {
-    // Start webserver
-    server.listen(serverport);
-    // Start live reload
-    lrserver.listen(livereloadport);
-    // Run the watch task, to keep taps on changes
-    gulp.run('watch');
+gulp.task('default', ['dev', 'watch']);
+gulp.task('dev', ['build'], function () {
 });
-
-gulp.task('build', function() {
+gulp.task('build', function () {
     runSequence(
         'clean',
-        ['views', 'styles', 'img','lint', 'javascript'],
+        ['views', 'styles', 'img', 'lint', 'javascript'],
         'bower'
     );
 });
