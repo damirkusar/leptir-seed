@@ -11,7 +11,7 @@ var JsConfiguration = (function () {
     };
 })();
 
-/*JsConfiguration.registerModule("bower_components/jquery/jquery.js");
+JsConfiguration.registerModule("bower_components/jquery/jquery.js");
 JsConfiguration.registerModule("bower_components/bootstrap/dist/js/bootstrap.js");
 JsConfiguration.registerModule("bower_components/underscore/underscore.js");
 JsConfiguration.registerModule("bower_components/moment/moment.js");
@@ -20,7 +20,7 @@ JsConfiguration.registerModule("bower_components/angular-ui-router/release/angul
 JsConfiguration.registerModule("bower_components/angular-animate/angular-animate.js");
 JsConfiguration.registerModule("bower_components/angular-resource/angular-resource.js");
 JsConfiguration.registerModule("bower_components/angular-bootstrap/ui-bootstrap-tpls.js");
-JsConfiguration.registerModule("bower_components/angular-ui-utils/ui-utils.js");*/
+JsConfiguration.registerModule("bower_components/angular-ui-utils/ui-utils.js");
 
 JsConfiguration.registerModule("common/js/app.controller.js");
 JsConfiguration.registerModule("common/services/ScrollToElement.js");

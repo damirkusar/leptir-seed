@@ -1,0 +1,133 @@
+/* Color Palette */
+/*****************/
+/* http://www.google.ch/design/spec/style/color.html#color-color-palette */
+/*************************************************************************/
+
+@mixin background-opacity($color, $opacity: 0.5) {
+    background-color: $color; /* The Fallback */
+    background-color: rgba($color, $opacity);
+}
+
+$primary-100: #F5F5F5;
+$primary-500: #9E9E9E;
+$primary-700: #616161;
+$secondary-100: #B2EBF2;
+$secondary-500: #00BCD4;
+$secondary-900: #006064;
+
+/* Design */
+body {
+    font-family: 'Verdana', Arial, sans-serif;
+    font-weight: 400;
+    background-color: #ffffff;
+    color: $primary-500;
+}
+
+h1 {
+    color: $primary-700;
+}
+
+h2, h3, h4, h5, h6 {
+    color: $secondary-500;
+}
+
+.overlay:before{
+    @include background-opacity($primary-100, 0.8);
+}
+
+#footer{
+    @include background-opacity($primary-100, 0.8);
+}
+
+.footer {
+    @include background-opacity($secondary-900, 0.8);
+    color: $primary-100;
+}
+
+.footer h1 {
+    color: $primary-100;
+}
+
+.normalize {
+    color: $primary-500;
+}
+
+.featureIt {
+    color: $secondary-500;
+}
+
+/* Links */
+a {
+    color: $secondary-500;
+    cursor: default;
+}
+
+a:hover{
+    text-decoration: none;
+    color: $secondary-500;
+}
+
+a.btn-header {
+    color: $primary-700;
+    border-color: $primary-700;
+}
+
+a.btn-header:hover {
+    color: $primary-700;
+    border-color: $secondary-500;
+}
+
+a.link-header {
+    color: $primary-700;
+}
+
+a.link-header:hover {
+    color: $primary-700;
+}
+
+a.social-items{
+    color: $primary-500;
+}
+
+a.social-items:hover{
+    color: $secondary-500;
+}
+
+.footer a {
+    color: $primary-500;
+}
+
+.footer a:hover {
+    color: $secondary-500;
+}
+
+/* Divider */
+.section-title-divider {
+    @include background-opacity($secondary-500, 1);
+}
+
+/* Bootstrap */
+
+.navbar-default  {
+    @include background-opacity(#ffffff, 1);
+}
+
+.navbar-default .navbar-nav > li > a,
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-brand{
+    color: $primary-500;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus,
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    color: $secondary-500;
+}
+
+@media screen and (max-width: 768px) {
+    .navbar-default .navbar-nav {
+        @include background-opacity(#ffffff, 1);
+    }
+}

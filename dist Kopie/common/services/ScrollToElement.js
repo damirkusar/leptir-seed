@@ -1,6 +1,5 @@
 var scrollSmoothToElementId;
 var scrollSmoothToTop;
-
 jQuery(document).ready(function () {
     scrollSmoothToElementId = function(elementId){
         jQuery('html, body').animate({

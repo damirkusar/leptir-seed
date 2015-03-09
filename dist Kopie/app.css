@@ -1,0 +1,222 @@
+#footer {
+  height: auto; }
+
+#welcome {
+  position: relative;
+  background: #ffffff url("modules/welcome/img/header_1200x800.jpg") repeat;
+  background-size: 100% 100%;
+  height: 80vh;
+  overflow: hidden;
+  padding-top: 5em; }
+
+.overlay:before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+
+#welcome * {
+  position: relative; }
+
+#page1 {
+  padding-top: 5em; }
+
+/*phi = 1.61803398875
+line-height(phi) = font-size * phi
+line-width = line-height(phi)^2
+*/
+html, body {
+  height: 100vh;
+  width: 100vw; }
+
+html {
+  font-size: 67.5%; }
+
+body {
+  font-size: 1.4em;
+  line-height: 2.2652em; }
+
+h1 {
+  font-size: 2em;
+  line-height: 3.236em; }
+
+h2 {
+  font-size: 1.5em;
+  line-height: 2.427em; }
+
+h3 {
+  font-size: 1.17em;
+  line-height: 1.893em; }
+
+h4 {
+  font-size: 1em;
+  line-height: 1.618em; }
+
+h5 {
+  font-size: .83em;
+  line-height: 1.343em; }
+
+h6 {
+  font-size: .75em;
+  line-height: 1.2135em; }
+
+h1, h2, h3, h4, h5, h6 {
+  text-align: center; }
+
+.center-h {
+  margin: auto; }
+
+.center-v {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%); }
+
+.full-height {
+  position: relative;
+  width: 100vw;
+  height: 100vh; }
+
+.section-title-divider {
+  width: 5%;
+  height: 0.1em;
+  margin: -2em auto 2em auto; }
+
+/* UI-View Animation */
+[ui-view].ng-enter, [ui-view].ng-leave {
+  position: absolute;
+  left: 0;
+  right: 0;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out; }
+
+[ui-view].ng-enter {
+  opacity: 0;
+  -webkit-transform: scale3d(0.5, 0.5, 0.5);
+  transform: scale3d(0.5, 0.5, 0.5); }
+
+[ui-view].ng-enter-active {
+  opacity: 1;
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1); }
+
+[ui-view].ng-leave {
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0); }
+
+[ui-view].ng-leave-active {
+  opacity: 0;
+  -webkit-transform: translate3d(100px, 0, 0);
+  transform: translate3d(100px, 0, 0); }
+
+/* Bootstrap */
+.navbar {
+  height: 7%; }
+
+.container {
+  padding-bottom: 5em; }
+
+/* Color Palette */
+/*****************/
+/* http://www.google.ch/design/spec/style/color.html#color-color-palette */
+/*************************************************************************/
+/* Design */
+body {
+  font-family: 'Verdana', Arial, sans-serif;
+  font-weight: 400;
+  background-color: #ffffff;
+  color: #9E9E9E; }
+
+h1 {
+  color: #616161; }
+
+h2, h3, h4, h5, h6 {
+  color: #00BCD4; }
+
+.overlay:before {
+  background-color: #F5F5F5;
+  /* The Fallback */
+  background-color: rgba(245, 245, 245, 0.8); }
+
+#footer {
+  background-color: #F5F5F5;
+  /* The Fallback */
+  background-color: rgba(245, 245, 245, 0.8); }
+
+.footer {
+  background-color: #006064;
+  /* The Fallback */
+  background-color: rgba(0, 96, 100, 0.8);
+  color: #F5F5F5; }
+
+.footer h1 {
+  color: #F5F5F5; }
+
+.normalize {
+  color: #9E9E9E; }
+
+.featureIt {
+  color: #00BCD4; }
+
+/* Links */
+a {
+  color: #00BCD4;
+  cursor: default; }
+
+a:hover {
+  text-decoration: none;
+  color: #00BCD4; }
+
+a.btn-header {
+  color: #616161;
+  border-color: #616161; }
+
+a.btn-header:hover {
+  color: #616161;
+  border-color: #00BCD4; }
+
+a.link-header {
+  color: #616161; }
+
+a.link-header:hover {
+  color: #616161; }
+
+a.social-items {
+  color: #9E9E9E; }
+
+a.social-items:hover {
+  color: #00BCD4; }
+
+.footer a {
+  color: #9E9E9E; }
+
+.footer a:hover {
+  color: #00BCD4; }
+
+/* Divider */
+.section-title-divider {
+  background-color: #00BCD4;
+  /* The Fallback */
+  background-color: #00bcd4; }
+
+/* Bootstrap */
+.navbar-default {
+  background-color: #ffffff;
+  /* The Fallback */
+  background-color: white; }
+
+.navbar-default .navbar-nav > li > a, .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-brand {
+  color: #9E9E9E; }
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #00BCD4; }
+
+@media screen and (max-width: 768px) {
+  .navbar-default .navbar-nav {
+    background-color: #ffffff;
+    /* The Fallback */
+    background-color: white; } }
