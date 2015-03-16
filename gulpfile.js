@@ -34,6 +34,7 @@ gulp.task('clean', function () {
 // JSHint task
 gulp.task('lint', function () {
     gulp.src([
+        './public/*.js',
         './public/app/**/js/*.js',
         './public/modules/*.js',
         './public/modules/js/*.js',
@@ -101,6 +102,10 @@ gulp.task('views', function () {
 
 // JS task
 gulp.task('javascript', function () {
+    gulp.src('./public/*.js')
+        .pipe(gulp.dest('dist/'))
+        .pipe(refresh(lrServer)); // Tell the lrServer to refresh;
+
     gulp.src('./public/app/*.js')
         .pipe(gulp.dest('dist/app/'))
         .pipe(refresh(lrServer)); // Tell the lrServer to refresh;
