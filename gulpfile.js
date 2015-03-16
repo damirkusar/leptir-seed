@@ -113,9 +113,9 @@ gulp.task('javascript', function () {
         .pipe(refresh(lrServer)); // Tell the lrServer to refresh;
 
     gulp.src([
-        './public/app/services/**/*.js'
+        './public/app/js/services/**/*.js'
     ])
-        .pipe(gulp.dest('dist/app/services'))
+        .pipe(gulp.dest('dist/app/js/services'))
         .pipe(refresh(lrServer)); // Tell the lrServer to refresh;
 
     gulp.src('./public/config/*.js')
