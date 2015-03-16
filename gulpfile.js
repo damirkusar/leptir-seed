@@ -101,6 +101,10 @@ gulp.task('views', function () {
 
 // JS task
 gulp.task('javascript', function () {
+    gulp.src('./public/app/*.js')
+        .pipe(gulp.dest('dist/app/'))
+        .pipe(refresh(lrServer)); // Tell the lrServer to refresh;
+
     gulp.src('./public/app/js/*.js')
         .pipe(gulp.dest('dist/app/js/'))
         .pipe(refresh(lrServer)); // Tell the lrServer to refresh;
