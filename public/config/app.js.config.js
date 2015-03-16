@@ -23,7 +23,8 @@ JsConfiguration.registerModule("bower_components/angular-bootstrap/ui-bootstrap-
 JsConfiguration.registerModule("bower_components/angular-ui-utils/ui-utils.js");*/
 
 JsConfiguration.registerModule("common/js/app.controller.js");
-JsConfiguration.registerModule("common/services/ScrollToElement.js");
+JsConfiguration.registerModule("common/services/scrollToElement.client.service.js");
+JsConfiguration.registerModule("common/services/menus.client.service.js");
 
 JsConfiguration.registerModule("modules/welcome/welcome.module.js");
 JsConfiguration.registerModule("modules/page1/page1.module.js");

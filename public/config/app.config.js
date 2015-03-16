@@ -24,3 +24,8 @@ var ApplicationConfiguration = (function () {
 
 angular.module(ApplicationConfiguration.applicationModuleName, ApplicationConfiguration.applicationModuleVendorDependencies);
 ApplicationConfiguration.registerModule('App');
+
+angular.module('App')
+    .run(['Menus', function (Menus) {
+        Menus.configMenus();
+    }]);
