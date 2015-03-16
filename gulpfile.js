@@ -118,8 +118,8 @@ gulp.task('javascript', function () {
         .pipe(gulp.dest('dist/app/js/services'))
         .pipe(refresh(lrServer)); // Tell the lrServer to refresh;
 
-    gulp.src('./public/config/*.js')
-        .pipe(gulp.dest('dist/config/'))
+    gulp.src('./public/app/js/config/*.js')
+        .pipe(gulp.dest('dist/app/js/config/'))
         .pipe(refresh(lrServer)); // Tell the lrServer to refresh;
 
     gulp.src([
