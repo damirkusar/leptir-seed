@@ -22,12 +22,12 @@ JsConfiguration.registerModule("bower_components/angular-resource/angular-resour
 JsConfiguration.registerModule("bower_components/angular-bootstrap/ui-bootstrap-tpls.js");
 JsConfiguration.registerModule("bower_components/angular-ui-utils/ui-utils.js");*/
 
-JsConfiguration.registerModule("common/js/app.controller.js");
-JsConfiguration.registerModule("common/services/scrollToElement.client.service.js");
-JsConfiguration.registerModule("common/services/menus.client.service.js");
+JsConfiguration.registerModule("app/js/app.controller.js");
+JsConfiguration.registerModule("app/services/scrollToElement.client.service.js");
+JsConfiguration.registerModule("app/services/menus.client.service.js");
+JsConfiguration.registerModule("app/partials/footer/footer.module.js");
+JsConfiguration.registerModule("app/partials/nav/nav.module.js");
 
 JsConfiguration.registerModule("modules/welcome/welcome.module.js");
 JsConfiguration.registerModule("modules/page1/page1.module.js");
 
-JsConfiguration.registerModule("common/partials/footer/footer.module.js");
-JsConfiguration.registerModule("common/partials/nav/nav.module.js");

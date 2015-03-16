@@ -34,12 +34,11 @@ gulp.task('clean', function () {
 // JSHint task
 gulp.task('lint', function () {
     gulp.src([
-        './public/common/js/*.js',
-        './public/common/partials/**/*.js',
-        './public/common/partials/**/js/*.js',
-        //'./public/config/*.js',
+        './public/app/**/js/*.js',
         './public/modules/*.js',
-        './public/modules/js/*.js'
+        './public/modules/js/*.js',
+        '!./public/app/js/app.js.config.js',
+        '!./public/app/js/app.css.config.js'
     ]).pipe(jshint())
         // You can look into pretty reporters as well, but that's another story
         .pipe(jshint.reporter('default'));
@@ -94,29 +93,29 @@ gulp.task('views', function () {
         .pipe(gulp.dest('dist/modules/'))
         .pipe(refresh(lrServer)); // Tell the lrServer to refresh;
 
-    gulp.src('./public/common/partials/**/views/*')
+    gulp.src('./public/app/partials/**/views/*')
         // Will be put in the dist/views folder
-        .pipe(gulp.dest('dist/common/partials/'))
+        .pipe(gulp.dest('dist/app/partials/'))
         .pipe(refresh(lrServer)); // Tell the lrServer to refresh;
 });
 
 // JS task
 gulp.task('javascript', function () {
-    gulp.src('./public/common/js/*.js')
-        .pipe(gulp.dest('dist/common/js/'))
+    gulp.src('./public/app/js/*.js')
+        .pipe(gulp.dest('dist/app/js/'))
         .pipe(refresh(lrServer)); // Tell the lrServer to refresh;
 
     gulp.src([
-        './public/common/partials/**/*.js',
-        './public/common/partials/**/js/*.js'
+        './public/app/partials/**/*.js',
+        './public/app/partials/**/js/*.js'
     ])
-        .pipe(gulp.dest('dist/common/partials'))
+        .pipe(gulp.dest('dist/app/partials'))
         .pipe(refresh(lrServer)); // Tell the lrServer to refresh;
 
     gulp.src([
-        './public/common/services/**/*.js'
+        './public/app/services/**/*.js'
     ])
-        .pipe(gulp.dest('dist/common/services'))
+        .pipe(gulp.dest('dist/app/services'))
         .pipe(refresh(lrServer)); // Tell the lrServer to refresh;
 
     gulp.src('./public/config/*.js')
@@ -134,8 +133,8 @@ gulp.task('javascript', function () {
 // Img task
 gulp.task('img', function () {
     gulp.src([
-        './public/common/partials/**/img/*'
-    ]).pipe(gulp.dest('dist/common/partials/'));
+        './public/app/partials/**/img/*'
+    ]).pipe(gulp.dest('dist/app/partials/'));
 
     gulp.src([
         './public/modules/**/img/*'
@@ -156,10 +155,9 @@ gulp.task('watch', ['lint'], function () {
     refresh.listen(liveReloadPort);
 
     gulp.watch([
-        './public/common/js/*.js',
-        './public/common/partials/**/*.js',
-        './public/common/partials/**/js/*.js',
-        './public/config/*.js',
+        './public/app/js/*.js',
+        './public/app/partials/**/*.js',
+        './public/app/partials/**/js/*.js',
         './public/modules/**/*.js',
         './public/modules/**/js/*.js'
     ], [
@@ -167,7 +165,7 @@ gulp.task('watch', ['lint'], function () {
         'javascript'
     ]);
 
-    gulp.watch(['public/index.html', 'public/modules/**/views/*.html', 'public/common/partials/**/views/*.html'], [
+    gulp.watch(['public/index.html', 'public/modules/**/views/*.html', 'public/app/partials/**/views/*.html'], [
         'views'
     ]);
 

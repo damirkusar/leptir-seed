@@ -12,11 +12,11 @@ angular.module('App')
                     },
                     "nav": {
                         controller: "NavCtrl",
-                        templateUrl: "common/partials/nav/views/nav.html"
+                        templateUrl: "app/partials/nav/views/nav.html"
                     },
                     "footer": {
                         controller: "FooterCtrl",
-                        templateUrl: "common/partials/footer/views/footer.html"
+                        templateUrl: "app/partials/footer/views/footer.html"
                     }
                 }
             }
