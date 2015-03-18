@@ -25,7 +25,7 @@ var CssConfiguration = (function () {
 CssConfiguration.registerModule("app.css");
 CssConfiguration.registerModule("bower_components/bootstrap/dist/css/bootstrap.min.css");
 
-JsConfiguration.registerModule("app/index.js");
+JsConfiguration.registerModule("modules/app/index.js");
 JsConfiguration.registerModule("modules/welcome/index.js");
 JsConfiguration.registerModule("modules/page1/index.js");
 

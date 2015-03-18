@@ -35,11 +35,10 @@ gulp.task('clean', function () {
 gulp.task('lint', function () {
     gulp.src([
         './public/*.js',
-        './public/app/**/js/*.js',
         './public/modules/*.js',
         './public/modules/js/*.js',
-        '!./public/app/js/app.js.config.js',
-        '!./public/app/js/app.css.config.js'
+        './public/partials/*.js',
+        './public/partials/js/*.js'
     ]).pipe(jshint())
         // You can look into pretty reporters as well, but that's another story
         .pipe(jshint.reporter('default'));
@@ -106,14 +105,6 @@ gulp.task('javascript', function () {
         .pipe(gulp.dest('dist/'))
         .pipe(refresh(lrServer)); // Tell the lrServer to refresh;
 
-    gulp.src('./public/app/*.js')
-        .pipe(gulp.dest('dist/app/'))
-        .pipe(refresh(lrServer)); // Tell the lrServer to refresh;
-
-    gulp.src('./public/app/**/*.js')
-        .pipe(gulp.dest('dist/app/'))
-        .pipe(refresh(lrServer)); // Tell the lrServer to refresh;
-
     gulp.src([
         './public/modules/**/*.js',
         './public/modules/**/js/*.js'
@@ -132,12 +123,12 @@ gulp.task('javascript', function () {
 // Img task
 gulp.task('img', function () {
     gulp.src([
-        './public/partials/**/img/*'
-    ]).pipe(gulp.dest('dist/partials/'));
-
-    gulp.src([
         './public/modules/**/img/*'
     ]).pipe(gulp.dest('dist/modules/'));
+
+    gulp.src([
+        './public/partials/**/img/*'
+    ]).pipe(gulp.dest('dist/partials/'));
 });
 
 // bower task
@@ -154,7 +145,6 @@ gulp.task('watch', ['lint'], function () {
     refresh.listen(liveReloadPort);
 
     gulp.watch([
-        './public/app/**/*.js',
         './public/modules/**/*.js',
         './public/partials/**/*.js'
     ], [
@@ -166,7 +156,7 @@ gulp.task('watch', ['lint'], function () {
         'views'
     ]);
 
-    gulp.watch(['public/*.scss'], [
+    gulp.watch(['public/*.scss', 'public/**/*.scss'], [
         'styles'
     ]);
 
