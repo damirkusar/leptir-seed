@@ -94,9 +94,9 @@ gulp.task('views', function () {
         .pipe(gulp.dest('dist/modules/'))
         .pipe(refresh(lrServer)); // Tell the lrServer to refresh;
 
-    gulp.src('./public/app/partials/**/views/*')
+    gulp.src('./public/partials/**/views/*')
         // Will be put in the dist/views folder
-        .pipe(gulp.dest('dist/app/partials/'))
+        .pipe(gulp.dest('dist/partials/'))
         .pipe(refresh(lrServer)); // Tell the lrServer to refresh;
 });
 
@@ -110,25 +110,8 @@ gulp.task('javascript', function () {
         .pipe(gulp.dest('dist/app/'))
         .pipe(refresh(lrServer)); // Tell the lrServer to refresh;
 
-    gulp.src('./public/app/js/*.js')
-        .pipe(gulp.dest('dist/app/js/'))
-        .pipe(refresh(lrServer)); // Tell the lrServer to refresh;
-
-    gulp.src([
-        './public/app/partials/**/*.js',
-        './public/app/partials/**/js/*.js'
-    ])
-        .pipe(gulp.dest('dist/app/partials'))
-        .pipe(refresh(lrServer)); // Tell the lrServer to refresh;
-
-    gulp.src([
-        './public/app/js/services/**/*.js'
-    ])
-        .pipe(gulp.dest('dist/app/js/services'))
-        .pipe(refresh(lrServer)); // Tell the lrServer to refresh;
-
-    gulp.src('./public/app/js/config/*.js')
-        .pipe(gulp.dest('dist/app/js/config/'))
+    gulp.src('./public/app/**/*.js')
+        .pipe(gulp.dest('dist/app/'))
         .pipe(refresh(lrServer)); // Tell the lrServer to refresh;
 
     gulp.src([
@@ -137,20 +120,27 @@ gulp.task('javascript', function () {
     ])
         .pipe(gulp.dest('dist/modules/'))
         .pipe(refresh(lrServer)); // Tell the lrServer to refresh;
+
+    gulp.src([
+        './public/partials/**/*.js',
+        './public/partials/**/js/*.js'
+    ])
+        .pipe(gulp.dest('dist/partials'))
+        .pipe(refresh(lrServer)); // Tell the lrServer to refresh;
 });
 
 // Img task
 gulp.task('img', function () {
     gulp.src([
-        './public/app/partials/**/img/*'
-    ]).pipe(gulp.dest('dist/app/partials/'));
+        './public/partials/**/img/*'
+    ]).pipe(gulp.dest('dist/partials/'));
 
     gulp.src([
         './public/modules/**/img/*'
     ]).pipe(gulp.dest('dist/modules/'));
 });
 
-// Img task
+// bower task
 gulp.task('bower', function () {
     gulp.src([
         './public/bower_components/**/*'
@@ -164,17 +154,15 @@ gulp.task('watch', ['lint'], function () {
     refresh.listen(liveReloadPort);
 
     gulp.watch([
-        './public/app/js/*.js',
-        './public/app/partials/**/*.js',
-        './public/app/partials/**/js/*.js',
+        './public/app/**/*.js',
         './public/modules/**/*.js',
-        './public/modules/**/js/*.js'
+        './public/partials/**/*.js'
     ], [
         'lint',
         'javascript'
     ]);
 
-    gulp.watch(['public/index.html', 'public/modules/**/views/*.html', 'public/app/partials/**/views/*.html'], [
+    gulp.watch(['public/index.html', 'public/modules/**/views/*.html', 'public/partials/**/views/*.html'], [
         'views'
     ]);
 
