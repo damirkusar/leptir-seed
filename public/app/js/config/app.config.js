@@ -22,28 +22,6 @@ var ApplicationConfiguration = (function () {
     };
 })();
 
-var JsConfiguration = (function () {
-    var registerModule = function (src) {
-        var jsLink = $("<script type='text/javascript' src='"+src+"'>");
-        $("body").append(jsLink);
-    };
-
-    return {
-        registerModule: registerModule
-    };
-})();
-
-var CssConfiguration = (function () {
-    var registerModule = function (href) {
-        var cssLink = $("<link rel='stylesheet' type='text/css' href='"+href+"'>");
-        $("head").prepend(cssLink);
-    };
-
-    return {
-        registerModule: registerModule
-    };
-})();
-
 angular.module(ApplicationConfiguration.applicationModuleName, ApplicationConfiguration.applicationModuleVendorDependencies);
 ApplicationConfiguration.registerModule('App');
 
