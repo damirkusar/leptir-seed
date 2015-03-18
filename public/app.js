@@ -1,10 +1,33 @@
 'use strict';
 
-/*
-var commonAppController = require('./common/js/app.controller.js');
-var scrollToElement = require('./common/services/ScrollToElement.js');
-var footerPartial = require('./common/partials/footer/footer.module.js');
-var navPartial = require('./common/partials/nav/nav.module.js');
+var JsConfiguration = (function () {
+    var registerModule = function (src) {
+        var jsLink = $("<script src='"+src+"'>");
+        $("body").append(jsLink);
+    };
 
-var welcomeModule = require('./modules/welcome/welcome.module.js');
-var page1Module = require('./modules/page1/page1.module.js');*/
+    return {
+        registerModule: registerModule
+    };
+})();
+
+var CssConfiguration = (function () {
+    var registerModule = function (href) {
+        var cssLink = $("<link rel='stylesheet' type='text/css' href='"+href+"'>");
+        $("head").prepend(cssLink);
+    };
+
+    return {
+        registerModule: registerModule
+    };
+})();
+
+CssConfiguration.registerModule("app.css");
+CssConfiguration.registerModule("bower_components/bootstrap/dist/css/bootstrap.min.css");
+
+JsConfiguration.registerModule("modules/app/index.js");
+JsConfiguration.registerModule("modules/welcome/index.js");
+JsConfiguration.registerModule("modules/page1/index.js");
+
+JsConfiguration.registerModule("partials/footer/index.js");
+JsConfiguration.registerModule("partials/nav/index.js");
