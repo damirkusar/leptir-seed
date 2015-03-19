@@ -34,5 +34,78 @@
     "preprotractor": "npm run update-webdriver",
     "protractor": "protractor e2e-tests/protractor.conf.js",
     "update-index-async": "node -e \"require('shelljs/global'); sed('-i', /\\/\\/@@NG_LOADER_START@@[\\s\\S]*\\/\\/@@NG_LOADER_END@@/, '//@@NG_LOADER_START@@\\n' + sed(/sourceMappingURL=angular-loader.min.js.map/,'sourceMappingURL=bower_components/angular-loader/angular-loader.min.js.map','app/bower_components/angular-loader/angular-loader.min.js') + '\\n//@@NG_LOADER_END@@', 'app/index-async.html');\""
+  },
+  "dependencies": {
+    "browserify-shim": "^3.8.3"
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
+  },
+  "browser": {
+    "jquery": "./public/bower_components/jquery/jquery.min.js",
+    "bootstrap": "./public/bower_components/bootstrap/dist/js/bootstrap.min.js",
+    "moment": "./public/bower_components/moment/min/moment.min.js",
+    "underscore": "./public/bower_components/underscore/underscore-min.js",
+    "angular": "./public/bower_components/angular/angular.min.js",
+    "angular-animate": "./public/bower_components/angular-animate/angular-animate.min.js",
+    "angular-bootstrap": "./public/bower_components/angular-bootstrap/ui-bootstrap.min.js",
+    "angular-bootstrap-tpls": "./public/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js",
+    "angular-cookies": "./public/bower_components/angular-cookies/angular-cookies.min.js",
+    "angular-mocks": "./public/bower_components/angular-mocks/angular-mocks.js",
+    "angular-resource": "./public/bower_components/angular-resource/angular-resource.min.js",
+    "angular-ui-router": "./public/bower_components/angular-ui-router/release/angular-ui-router.min.js",
+    "angular-ui-utils": "./public/bower_components/angular-ui-utils/ui-utils.min.js"
+  },
+  "browserify-shim": {
+    "jquery": {
+      "exports": "$"
+    },
+    "bootstrap": {
+      "exports": "bootstrap"
+    },
+    "moment": {
+      "exports": "moment"
+    },
+    "underscore": {
+      "exports": "underscore"
+    },
+    "angular": {
+      "exports": "angular",
+      "depends": "jquery"
+    },
+    "angular-animate": {
+      "depends": ["angular"],
+      "exports": "null"
+    },
+    "angular-bootstrap": {
+      "depends": ["angular"],
+      "exports": "null"
+    },
+    "angular-bootstrap-tpls": {
+      "depends": ["angular"],
+      "exports": "null"
+    },
+    "angular-cookies": {
+      "depends": ["angular"],
+      "exports": "null"
+    },
+    "angular-mocks": {
+      "depends": ["angular"],
+      "exports": "null"
+    },
+    "angular-resource": {
+      "depends": ["angular"],
+      "exports": "null"
+    },
+    "angular-ui-router": {
+      "depends": ["angular"],
+      "exports": "null"
+    },
+    "angular-ui-utils": {
+      "depends": ["angular"],
+      "exports": "null"
+    }
   }
 }

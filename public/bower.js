@@ -1,12 +1,15 @@
 'use strict';
 
-/*JsConfiguration.registerModule("bower_components/jquery/jquery.js");
- JsConfiguration.registerModule("bower_components/bootstrap/dist/js/bootstrap.js");
- JsConfiguration.registerModule("bower_components/underscore/underscore.js");
- JsConfiguration.registerModule("bower_components/moment/moment.js");
- JsConfiguration.registerModule("bower_components/angular/angular.js");
- JsConfiguration.registerModule("bower_components/angular-ui-router/release/angular-ui-router.js");
- JsConfiguration.registerModule("bower_components/angular-animate/angular-animate.js");
- JsConfiguration.registerModule("bower_components/angular-resource/angular-resource.js");
- JsConfiguration.registerModule("bower_components/angular-bootstrap/ui-bootstrap-tpls.js");
- JsConfiguration.registerModule("bower_components/angular-ui-utils/ui-utils.js");*/
+require('jquery');
+require('bootstrap');
+require('moment');
+require('underscore');
+require('angular');
+require('angular-animate');
+require('angular-bootstrap');
+require('angular-bootstrap-tpls');
+require('angular-cookies');
+require('angular-mocks');
+require('angular-resource');
+require('angular-ui-router');
+require('angular-ui-utils');

@@ -48,6 +48,7 @@ var CssConfiguration = (function () {
 
 CssConfiguration.registerModule("app.css");
 CssConfiguration.registerModule("bower_components/bootstrap/dist/css/bootstrap.min.css");
+CssConfiguration.registerModule("bower_components/font-awesome/css/font-awesome.min.css");
 
 JsConfiguration.registerModule("modules/app/index.js");
 JsConfiguration.registerModule("modules/welcome/index.js");

@@ -62,17 +62,7 @@ gulp.task('styles', function () {
 // Browserify task
 gulp.task('browserify', function () {
     // Single point of entry (make sure not to src ALL your files, browserify will figure it out for you)
-    gulp.src(['public/main.js'])
-        .pipe(browserify({
-            insertGlobals: true,
-            debug: true
-        }))
-        // Bundle to a single file
-        .pipe(concat('app.js'))
-        // Output it to our dist folder
-        .pipe(gulp.dest('dist/js'));
-
-    gulp.src(['./public/config/app.bower.js.config.js'])
+    gulp.src(['public/bower.js'])
         .pipe(browserify({
             insertGlobals: true,
             debug: true
@@ -80,7 +70,7 @@ gulp.task('browserify', function () {
         // Bundle to a single file
         .pipe(concat('bower.js'))
         // Output it to our dist folder
-        .pipe(gulp.dest('dist/js'));
+        .pipe(gulp.dest('dist/'));
 });
 
 // Views task
@@ -169,7 +159,7 @@ gulp.task('dev', ['build'], function () {
 gulp.task('build', function () {
     runSequence(
         'clean',
-        ['views', 'styles', 'img', 'lint', 'javascript'],
+        ['views', 'styles', 'img', 'lint', 'javascript', 'browserify'],
         'bower'
     );
 });
