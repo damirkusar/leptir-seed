@@ -1,2 +1,4 @@
+'use strict';
+
 ApplicationConfiguration.registerModule('footer');
-JsConfiguration.registerModule("partials/footer/js/footer.controller.js");
+require('./js/controllers/footer.controller.js');

@@ -2,7 +2,7 @@
 angular.module('App')
     .controller("AppCtrl", function ($scope, ScrollSmooth) {
 
-        $scope.AppName = 'Modify me in AppCtrl';
+        $scope.AppName = 'Modify me in AppModule';
         $scope.Testing = 'I am testing';
 
         $scope.scrollSmoothToElementId = function (elementId) {

@@ -61,7 +61,6 @@ gulp.task('styles', function () {
 
 // Browserify task
 gulp.task('browserify', function () {
-    // Single point of entry (make sure not to src ALL your files, browserify will figure it out for you)
     gulp.src(['public/bower.js'])
         .pipe(browserify({
             insertGlobals: true,
@@ -69,6 +68,17 @@ gulp.task('browserify', function () {
         }))
         // Bundle to a single file
         .pipe(concat('bower.js'))
+        // Output it to our dist folder
+        .pipe(gulp.dest('dist/'))
+        .pipe(refresh(lrServer));
+
+    gulp.src(['public/app.js'])
+        .pipe(browserify({
+            insertGlobals: true,
+            debug: true
+        }))
+        // Bundle to a single file
+        .pipe(concat('app.js'))
         // Output it to our dist folder
         .pipe(gulp.dest('dist/'))
         .pipe(refresh(lrServer));

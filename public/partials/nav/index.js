@@ -1,3 +1,4 @@
-ApplicationConfiguration.registerModule('nav');
-JsConfiguration.registerModule("partials/nav/js/nav.controller.js");
+'use strict';
 
+ApplicationConfiguration.registerModule('nav');
+require('./js/controllers/nav.controller.js');
