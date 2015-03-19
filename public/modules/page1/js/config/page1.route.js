@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('page1').config(function($stateProvider) {
     $stateProvider.
         state("page1",

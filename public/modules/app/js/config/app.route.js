@@ -1,4 +1,5 @@
 'use strict';
+
 angular.module('App')
     .config(function ($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise('/welcome');

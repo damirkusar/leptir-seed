@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('welcome').config(function($stateProvider) {
     $stateProvider.
         state("welcome",

@@ -1,4 +1,5 @@
 'use strict';
+
 angular.module('App')
     .controller("AppCtrl", function ($scope, ScrollSmooth) {
 
