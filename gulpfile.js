@@ -70,7 +70,8 @@ gulp.task('browserify', function () {
         // Bundle to a single file
         .pipe(concat('bower.js'))
         // Output it to our dist folder
-        .pipe(gulp.dest('dist/'));
+        .pipe(gulp.dest('dist/'))
+        .pipe(refresh(lrServer));
 });
 
 // Views task
@@ -135,6 +136,7 @@ gulp.task('watch', ['lint'], function () {
     refresh.listen(liveReloadPort);
 
     gulp.watch([
+        './public/*.js',
         './public/modules/**/*.js',
         './public/partials/**/*.js'
     ], [
