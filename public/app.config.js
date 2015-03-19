@@ -23,14 +23,3 @@ var ApplicationConfiguration = (function () {
 })();
 
 angular.module(ApplicationConfiguration.applicationModuleName, ApplicationConfiguration.applicationModuleVendorDependencies);
-
-var JsConfiguration = (function () {
-    var registerModule = function (src) {
-        var jsLink = $("<script src='"+src+"'>");
-        $("body").append(jsLink);
-    };
-
-    return {
-        registerModule: registerModule
-    };
-})();

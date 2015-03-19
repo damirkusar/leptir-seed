@@ -1,7 +1,7 @@
 'use strict';
 
-require('./modules/app/index.js');
-require('./modules/welcome/index.js');
-require('./modules/page1/index.js');
+require('./modules/app');
+require('./modules/welcome');
+require('./modules/page1');
 require('./partials/nav');
 require('./partials/footer');
