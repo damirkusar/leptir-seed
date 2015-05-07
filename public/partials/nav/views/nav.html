@@ -22,13 +22,14 @@
                     <ul class="dropdown-menu" role="menu">
                         <li data-ng-repeat="subItem in item.items">
                             <a ui-sref="{{subItem.uiState}}"
-                               data-ng-bind="subItem.title"></a>
+                               data-ng-bind="subItem.title">
+                            </a>
                         </li>
                     </ul>
 
                 </li>
 
-                <li><a>{{NavTest}}</a></li>
+                <li><a>{{PartialTest}}</a></li>
 
             </ul>
         </div>
