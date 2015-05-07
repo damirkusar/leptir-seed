@@ -11,7 +11,7 @@ angular.module('welcome').config(function($stateProvider) {
                     controller: "WelcomeCtrl",
                     templateUrl: "modules/welcome/views/welcome.html"
                 },
-                "footer@parent": {
+                "subFooter@welcome": {
                     controller: "FooterCtrl",
                     templateUrl: "partials/footer/views/footer.html"
                 }
