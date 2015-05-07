@@ -38,11 +38,12 @@ angular.module('App').factory('Menus', ['$log', function (log) {
             delete menus[menuId];
         },
         // Add menu item object
-        addMenuItem: function (menuId, menuItemTitle, menuItemUiState, menuItemType, position) {
+        addMenuItem: function (menuId, menuItemId, menuItemTitle, menuItemUiState, menuItemType, position) {
             this.validateMenuExistance(menuId);
 
             // Push new menu item
             menus[menuId].items.push({
+                id: menuItemId,
                 title: menuItemTitle,
                 uiState: menuItemUiState,
                 class: menuItemType,
@@ -53,12 +54,12 @@ angular.module('App').factory('Menus', ['$log', function (log) {
             // Return the menu object
             return menus[menuId];
         },
-        addSubMenuItem: function (menuId, rootMenuItemUiState, subMenuItemTitle, subMenuItemUiState, position) {
+        addSubMenuItem: function (menuId, rootMenuItemId, subMenuItemTitle, subMenuItemUiState, position) {
             this.validateMenuExistance(menuId);
 
             // Search for menu item
             for (var itemIndex in menus[menuId].items) {
-                if (menus[menuId].items[itemIndex].uiState === rootMenuItemUiState) {
+                if (menus[menuId].items[itemIndex].id === rootMenuItemId) {
                     // Push new submenu item
                     menus[menuId].items[itemIndex].items.push({
                         title: subMenuItemTitle,
