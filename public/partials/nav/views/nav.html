@@ -12,15 +12,21 @@
 
         <div id="navigation" class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right pull-right">
-                <li><a ng-click="scrollSmoothToElementId('about')">About</a></li>
-                <li><a ng-click="scrollSmoothToElementId('footer')">Footer</a></li>
-                <li><a>{{NavTest}}</a></li>
-            </ul>
+                <li data-ng-repeat="item in topBarItems | orderBy: 'position'" class="dropdown">
+                    <a ui-sref="{{item.uiState}}"
+                       data-ng-bind="item.title"
+                       ng-class="item.class == 'dropdown' ? 'dropdown': ''"
+                       ng-attr-data-toggle="{{item.class == 'dropdown' ? 'dropdown' : ''}}">
+                    </a>
 
-            <ul class="nav navbar-nav navbar-right pull-right">
-                <li data-ng-repeat="item in topBarItems | orderBy: 'position'">
-                    <a ui-sref="{{item.uiState}}" , data-ng-bind="item.title"></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li data-ng-repeat="subItem in item.items">
+                            <a ui-sref="{{subItem.uiState}}"
+                               data-ng-bind="subItem.title"></a>
+                        </li>
+                    </ul>
                 </li>
+                <li><a>{{NavTest}}</a></li>
             </ul>
         </div>
     </div>

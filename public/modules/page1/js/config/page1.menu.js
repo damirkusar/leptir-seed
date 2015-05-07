@@ -3,8 +3,8 @@
 angular.module('page1').run(['Menus',
     function(Menus) {
         // Set top bar menu items
-        Menus.addMenuItem('topBar', 'Page1', 'page1', 'dropdown');
-        Menus.addSubMenuItem('topBar', 'welcome', 'About', 'about');
-        Menus.addSubMenuItem('topBar', 'welcome', 'Footer', 'footer');
+        Menus.addMenuItem('topBar', 'Page1', 'page1');
+        Menus.addSubMenuItem('topBar', 'page1', 'To Page 1', 'page1');
+        Menus.addSubMenuItem('topBar', 'page1', 'To Welcome', 'welcome');
     }
 ]);
