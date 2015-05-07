@@ -1,4 +1,5 @@
 var gulp = require('gulp'),
+    gutil = require('gulp-util'),
     jshint = require('gulp-jshint'),
     browserify = require('gulp-browserify'),
     concat = require('gulp-concat'),
@@ -145,8 +146,6 @@ gulp.task('bower-css', function () {
     ]).pipe(gulp.dest('dist/bower_components/'));
 });
 
-
-// bower task
 gulp.task('bower-bootstrap', function () {
     gulp.src([
         './public/bower_components/bootstrap/**/*.min.css'
@@ -179,7 +178,12 @@ gulp.task('watch', ['lint'], function () {
     //gulp.watch('./dist/**').on('change', refresh.changed);
 });
 
-gulp.task('default', ['dev', 'watch']);
+gulp.task('log', function() {
+    gutil.log('Server Started', gutil.colors.cyan('localhost'), gutil.colors.magenta('5000'));
+    gutil.beep();
+});
+
+gulp.task('default', ['dev', 'watch', 'log']);
 gulp.task('dev', ['build'], function () {
 });
 gulp.task('build', function () {

@@ -38,16 +38,15 @@ angular.module('App').factory('Menus', ['$log', function (log) {
             delete menus[menuId];
         },
         // Add menu item object
-        addMenuItem: function (menuId, menuItemTitle, menuItemURL, menuItemType, menuItemUIRoute, position) {
+        addMenuItem: function (menuId, menuItemTitle, menuItemUiState, menuItemType, position) {
             this.validateMenuExistance(menuId);
 
             // Push new menu item
             menus[menuId].items.push({
                 title: menuItemTitle,
-                link: menuItemURL,
+                uiState: menuItemUiState,
                 menuItemType: menuItemType || 'item',
                 menuItemClass: menuItemType,
-                uiRoute: menuItemUIRoute || ('/' + menuItemURL),
                 position: position || 0,
                 items: []
             });
@@ -104,6 +103,10 @@ angular.module('App').factory('Menus', ['$log', function (log) {
         },
         configMenus: function(){
             this.addMenu('topBar');
+        },
+        resetMenus: function(){
+            menus = {};
+            this.configMenus();
         }
     };
 }]);

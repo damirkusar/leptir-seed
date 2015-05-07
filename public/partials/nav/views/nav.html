@@ -14,8 +14,13 @@
             <ul class="nav navbar-nav navbar-right pull-right">
                 <li><a ng-click="scrollSmoothToElementId('about')">About</a></li>
                 <li><a ng-click="scrollSmoothToElementId('footer')">Footer</a></li>
-                <li><a ui-sref="page1">Page1</a></li>
                 <li><a>{{NavTest}}</a></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right pull-right">
+                <li data-ng-repeat="item in topBarItems | orderBy: 'position'">
+                    <a ui-sref="{{item.uiState}}" , data-ng-bind="item.title"></a>
+                </li>
             </ul>
         </div>
     </div>
