@@ -54,7 +54,7 @@ angular.module('App').factory('Menus', ['$log', function (log) {
             // Return the menu object
             return menus[menuId];
         },
-        addSubMenuItem: function (menuId, rootMenuItemId, subMenuItemTitle, subMenuItemUiState, position) {
+        addSubMenuItem: function (menuId, rootMenuItemId, subMenuItemId, subMenuItemTitle, subMenuItemUiState, position) {
             this.validateMenuExistance(menuId);
 
             // Search for menu item
@@ -62,6 +62,7 @@ angular.module('App').factory('Menus', ['$log', function (log) {
                 if (menus[menuId].items[itemIndex].id === rootMenuItemId) {
                     // Push new submenu item
                     menus[menuId].items[itemIndex].items.push({
+                        id: subMenuItemId,
                         title: subMenuItemTitle,
                         uiState: subMenuItemUiState,
                         position: position || 0
@@ -72,12 +73,12 @@ angular.module('App').factory('Menus', ['$log', function (log) {
             // Return the menu object
             return menus[menuId];
         },
-        removeMenuItem: function (menuId, menuItemURL) {
+        removeMenuItem: function (menuId, menuItemId) {
             this.validateMenuExistance(menuId);
 
             // Search for menu item to remove
             for (var itemIndex in menus[menuId].items) {
-                if (menus[menuId].items[itemIndex].link === menuItemURL) {
+                if (menus[menuId].items[itemIndex].id === menuItemId) {
                     menus[menuId].items.splice(itemIndex, 1);
                 }
             }
@@ -85,13 +86,13 @@ angular.module('App').factory('Menus', ['$log', function (log) {
             // Return the menu object
             return menus[menuId];
         },
-        removeSubMenuItem: function (menuId, subMenuItemURL) {
+        removeSubMenuItem: function (menuId, subMenuItemId) {
             this.validateMenuExistance(menuId);
 
             // Search for menu item to remove
             for (var itemIndex in menus[menuId].items) {
                 for (var subItemIndex in menus[menuId].items[itemIndex].items) {
-                    if (menus[menuId].items[itemIndex].items[subItemIndex].link === subMenuItemURL) {
+                    if (menus[menuId].items[itemIndex].items[subItemIndex].id === subMenuItemId) {
                         menus[menuId].items[itemIndex].items.splice(subItemIndex, 1);
                     }
                 }
