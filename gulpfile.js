@@ -28,8 +28,8 @@ server.all('/*', function (req, res) {
 
 var paths = {
     scripts: ['./public/*.js', './public/modules/**/*.js'],
-    views: ['public/index.html', 'public/modules/**/*.html'],
-    styles: ['public/*.scss', 'public/modules/**/*.scss'],
+    views: ['./public/index.html', './public/modules/**/*.html'],
+    styles: ['./public/*.scss', './public/modules/**/*.scss'],
     destination_public: './dist/',
     destination_modules: './dist/modules/'
 };
@@ -42,7 +42,7 @@ gulp.task('clean', function () {
 
 // Styles
 gulp.task('styles', function () {
-    gulp.src('public/*.scss')
+    gulp.src(paths.styles[0])
         // The onerror handler prevents Gulp from crashing when you make a mistake in your SASS
         .pipe(sass({
             onError: function (e) {
@@ -58,11 +58,11 @@ gulp.task('styles', function () {
 
 // Views task
 gulp.task('views', function () {
-    gulp.src('./public/index.html')
+    gulp.src(paths.views[0])
         .pipe(gulp.dest(paths.destination_public))
         .pipe(refresh(lrServer)); // Tell the lrServer to refresh;
 
-    gulp.src('./public/modules/**/views/*')
+    gulp.src(paths.views[1])
         .pipe(gulp.dest(paths.destination_modules))
         .pipe(refresh(lrServer)); // Tell the lrServer to refresh;
 });
@@ -76,11 +76,11 @@ gulp.task('lint', function () {
 
 // JS task
 gulp.task('javascript', function () {
-    gulp.src('./public/*.js')
+    gulp.src(paths.scripts[0])
         .pipe(gulp.dest(paths.destination_public))
         .pipe(refresh(lrServer)); // Tell the lrServer to refresh;
 
-    gulp.src('./public/modules/**/*.js')
+    gulp.src(paths.scripts[1])
         .pipe(gulp.dest(paths.destination_modules))
         .pipe(refresh(lrServer)); // Tell the lrServer to refresh;
 });
