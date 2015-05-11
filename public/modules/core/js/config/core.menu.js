@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('Core')
+angular.module('core')
     .run(['Menus', function (Menus) {
         Menus.configMenus();
     }]);

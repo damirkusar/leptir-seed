@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('Core')
+angular.module('core')
     .controller("CoreCtrl", function ($scope, ScrollSmooth) {
 
         $scope.AppName = 'Modify me in CoreModule';

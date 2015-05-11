@@ -17,7 +17,7 @@ jQuery(document).ready(function () {
     }
 });
 
-angular.module('Core').factory('ScrollSmooth',function() {
+angular.module('core').factory('ScrollSmooth',function() {
     return {
         toElementId: function (elementId) {
             scrollSmoothToElementId(elementId);

@@ -1,9 +1,9 @@
 'use strict';
 
-ApplicationConfiguration.registerModule('Core');
+ApplicationConfiguration.registerModule('core');
 
-require('./js/config/app.menu.js');
-require('./js/config/app.route.js');
-require('./js/services/scrollToElement.client.service.js');
-require('./js/services/menus.client.service.js');
-require('./js/controllers/app.controller.js');
+require('./js/config/core.menu.js');
+require('./js/config/core.route.js');
+require('./js/services/scrollToElement.service.js');
+require('./js/services/menus.service.js');
+require('./js/controllers/core.controller.js');
