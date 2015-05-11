@@ -26,9 +26,14 @@ server.all('/*', function (req, res) {
     res.sendFile('index.html', {root: 'dist'});
 });
 
+var paths = {
+    destination_public: './dist/',
+    destination_module: './dist/modules/'
+};
+
 // Clean task
 gulp.task('clean', function () {
-    return gulp.src('./dist/', {read: false}) // much faster
+    return gulp.src(paths.destination_public, {read: false}) // much faster
         .pipe(clean());
 });
 
@@ -44,14 +49,14 @@ gulp.task('styles', function () {
         // Optionally add autoPrefixer
         .pipe(autoPrefixer("last 2 versions", "> 1%", "ie 8"))
         // These last two should look familiar now :)
-        .pipe(gulp.dest('dist/'))
+        .pipe(gulp.dest(paths.destination_public))
         .pipe(refresh(lrServer));
 });
 
 // Views task
 gulp.task('views', function () {
     gulp.src('./public/index.html')
-        .pipe(gulp.dest('dist/'))
+        .pipe(gulp.dest(paths.destination_public))
         .pipe(refresh(lrServer)); // Tell the lrServer to refresh;
 
     gulp.src('./public/modules/**/views/*')
@@ -72,7 +77,7 @@ gulp.task('lint', function () {
 // JS task
 gulp.task('javascript', function () {
     gulp.src('./public/*.js')
-        .pipe(gulp.dest('dist/'))
+        .pipe(gulp.dest(paths.destination_public))
         .pipe(refresh(lrServer)); // Tell the lrServer to refresh;
 
     gulp.src('./public/modules/**/*.js')
@@ -90,7 +95,7 @@ gulp.task('browserify', function () {
         // Bundle to a single file
         .pipe(concat('bower.js'))
         // Output it to our dist folder
-        .pipe(gulp.dest('dist/'))
+        .pipe(gulp.dest(paths.destination_public))
         .pipe(refresh(lrServer));
 
     gulp.src(['public/app.js'])
@@ -101,7 +106,7 @@ gulp.task('browserify', function () {
         // Bundle to a single file
         .pipe(concat('app.js'))
         // Output it to our dist folder
-        .pipe(gulp.dest('dist/'))
+        .pipe(gulp.dest(paths.destination_public))
         .pipe(refresh(lrServer));
 });
 
