@@ -27,6 +27,9 @@ server.all('/*', function (req, res) {
 });
 
 var paths = {
+    scripts: ['./public/*.js', './public/modules/**/*.js'],
+    views: ['public/index.html', 'public/modules/**/*.html'],
+    styles: ['public/*.scss', 'public/modules/**/*.scss'],
     destination_public: './dist/',
     destination_modules: './dist/modules/'
 };
@@ -66,10 +69,7 @@ gulp.task('views', function () {
 
 // JSHint task
 gulp.task('lint', function () {
-    gulp.src([
-        './public/*.js',
-        './public/modules/**/*.js',
-    ]).pipe(jshint())
+    gulp.src(paths.scripts).pipe(jshint())
         // You can look into pretty reporters as well, but that's another story
         .pipe(jshint.reporter('default'));
 });
@@ -136,19 +136,16 @@ gulp.task('watch', ['lint'], function () {
     // Start live reload
     refresh.listen(liveReloadPort);
 
-    gulp.watch([
-        './public/*.js',
-        './public/modules/**/*.js'
-    ], [
+    gulp.watch(paths.scripts, [
         'lint',
         'javascript'
     ]);
 
-    gulp.watch(['public/index.html', 'public/modules/**/*.html'], [
+    gulp.watch(paths.views, [
         'views'
     ]);
 
-    gulp.watch(['public/*.scss', 'public/modules/**/*.scss'], [
+    gulp.watch(paths.styles, [
         'styles'
     ]);
 });
