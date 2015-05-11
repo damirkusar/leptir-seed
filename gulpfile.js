@@ -37,9 +37,7 @@ gulp.task('lint', function () {
     gulp.src([
         './public/*.js',
         './public/modules/*.js',
-        './public/modules/js/*.js',
-        './public/partials/*.js',
-        './public/partials/js/*.js'
+        './public/modules/js/*.js'
     ]).pipe(jshint())
         // You can look into pretty reporters as well, but that's another story
         .pipe(jshint.reporter('default'));
@@ -94,11 +92,6 @@ gulp.task('views', function () {
     gulp.src('./public/modules/**/views/*')
         .pipe(gulp.dest('dist/modules/'))
         .pipe(refresh(lrServer)); // Tell the lrServer to refresh;
-
-    gulp.src('./public/partials/**/views/*')
-        // Will be put in the dist/views folder
-        .pipe(gulp.dest('dist/partials/'))
-        .pipe(refresh(lrServer)); // Tell the lrServer to refresh;
 });
 
 // JS task
@@ -113,13 +106,6 @@ gulp.task('javascript', function () {
     ])
         .pipe(gulp.dest('dist/modules/'))
         .pipe(refresh(lrServer)); // Tell the lrServer to refresh;
-
-    gulp.src([
-        './public/partials/**/*.js',
-        './public/partials/**/js/*.js'
-    ])
-        .pipe(gulp.dest('dist/partials'))
-        .pipe(refresh(lrServer)); // Tell the lrServer to refresh;
 });
 
 // Img task
@@ -127,10 +113,6 @@ gulp.task('img', function () {
     gulp.src([
         './public/modules/**/img/*'
     ]).pipe(gulp.dest('dist/modules/'));
-
-    gulp.src([
-        './public/partials/**/img/*'
-    ]).pipe(gulp.dest('dist/partials/'));
 });
 
 // bower task
@@ -160,22 +142,19 @@ gulp.task('watch', ['lint'], function () {
 
     gulp.watch([
         './public/*.js',
-        './public/modules/**/*.js',
-        './public/partials/**/*.js'
+        './public/modules/**/*.js'
     ], [
         'lint',
         'javascript'
     ]);
 
-    gulp.watch(['public/index.html', 'public/modules/**/views/*.html', 'public/partials/**/views/*.html'], [
+    gulp.watch(['public/index.html', 'public/modules/**/views/*.html'], [
         'views'
     ]);
 
     gulp.watch(['public/*.scss', 'public/**/*.scss'], [
         'styles'
     ]);
-
-    //gulp.watch('./dist/**').on('change', refresh.changed);
 });
 
 gulp.task('log', function() {

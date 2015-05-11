@@ -13,11 +13,11 @@ angular.module('core')
                     },
                     "nav": {
                         controller: "NavCtrl",
-                        templateUrl: "partials/nav/views/index.html"
+                        templateUrl: "modules/core/views/nav.html"
                     },
                     "footer": {
                         controller: "FooterCtrl",
-                        templateUrl: "partials/footer/views/index.html"
+                        templateUrl: "modules/core/views/footer.html"
                     }
                 }
             }
