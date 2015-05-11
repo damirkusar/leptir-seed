@@ -28,10 +28,14 @@ server.all('/*', function (req, res) {
 
 var paths = {
     scripts: ['./public/*.js', './public/modules/**/*.js'],
+    browserify: ['./public/bower.js', './public/app.js'],
     views: ['./public/index.html', './public/modules/**/*.html'],
     styles: ['./public/*.scss', './public/modules/**/*.scss'],
+    img: ['./public/modules/**/img/*'],
+    bower: ['./public/bower_components/**/*', './public/bower_components/**/*.css', './public/bower_components/bootstrap/**/*.min.css'],
     destination_public: './dist/',
-    destination_modules: './dist/modules/'
+    destination_modules: './dist/modules/',
+    destination_bower: ['./dist/bower_components/', './dist/bower_components/bootstrap/']
 };
 
 // Clean task
@@ -87,7 +91,7 @@ gulp.task('javascript', function () {
 
 // Browserify task
 gulp.task('browserify', function () {
-    gulp.src(['public/bower.js'])
+    gulp.src(paths.browserify[0])
         .pipe(browserify({
             insertGlobals: true,
             debug: true
@@ -98,7 +102,7 @@ gulp.task('browserify', function () {
         .pipe(gulp.dest(paths.destination_public))
         .pipe(refresh(lrServer));
 
-    gulp.src(['public/app.js'])
+    gulp.src(paths.browserify[1])
         .pipe(browserify({
             insertGlobals: true,
             debug: true
@@ -112,22 +116,22 @@ gulp.task('browserify', function () {
 
 // Img task
 gulp.task('img', function () {
-    gulp.src('./public/modules/**/img/*').pipe(gulp.dest(paths.destination_modules));
+    gulp.src(paths.img).pipe(gulp.dest(paths.destination_modules));
 });
 
 // bower task
 gulp.task('bower', function () {
-    gulp.src('./public/bower_components/**/*').pipe(gulp.dest('dist/bower_components/'));
+    gulp.src(paths.bower[0]).pipe(gulp.dest(paths.destination_bower[0]));
 });
 
 // bower css task
 gulp.task('bower-css', function () {
-    gulp.src('./public/bower_components/**/*.css').pipe(gulp.dest('dist/bower_components/'));
+    gulp.src(paths.bower[1]).pipe(gulp.dest(paths.destination_bower[0]));
 });
 
 // bower bootstrap task
 gulp.task('bower-bootstrap', function () {
-    gulp.src('./public/bower_components/bootstrap/**/*.min.css').pipe(gulp.dest('dist/bower_components/bootstrap/'));
+    gulp.src(paths.bower[2]).pipe(gulp.dest(paths.destination_bower[1]));
 });
 
 gulp.task('watch', ['lint'], function () {
