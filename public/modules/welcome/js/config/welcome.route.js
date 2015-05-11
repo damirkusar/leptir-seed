@@ -9,11 +9,11 @@ angular.module('welcome').config(function($stateProvider) {
             views: {
                 "": {
                     controller: "WelcomeCtrl",
-                    templateUrl: "modules/welcome/views/welcome.html"
+                    templateUrl: "modules/welcome/views/index.html"
                 },
-                "subFooter@welcome": {
-                    controller: "FooterCtrl",
-                    templateUrl: "partials/footer/views/footer.html"
+                "welcome.partial@welcome": {
+                    controller: "WelcomeCtrl",
+                    templateUrl: "modules/welcome/views/partial.html"
                 }
             }
         })
@@ -24,7 +24,7 @@ angular.module('welcome').config(function($stateProvider) {
             views: {
                 "": {
                     controller: "WelcomeCtrl",
-                    templateUrl: "modules/welcome/views/welcome.html"
+                    templateUrl: "modules/welcome/views/welcomeTest.html"
                 }
             }
         });

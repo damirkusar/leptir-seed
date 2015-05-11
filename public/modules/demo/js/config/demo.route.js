@@ -9,7 +9,7 @@ angular.module('demo').config(function($stateProvider) {
             views: {
                 "": {
                     controller: "DemoCtrl",
-                    templateUrl: "modules/demo/views/demo.html"
+                    templateUrl: "modules/demo/views/index.html"
                 }
             }
         });
