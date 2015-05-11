@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('App')
+angular.module('Core')
     .config(function ($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise('/welcome');
 

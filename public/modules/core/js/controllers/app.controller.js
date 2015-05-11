@@ -1,10 +1,9 @@
 'use strict';
 
-angular.module('App')
-    .controller("AppCtrl", function ($scope, ScrollSmooth) {
+angular.module('Core')
+    .controller("CoreCtrl", function ($scope, ScrollSmooth) {
 
-        $scope.AppName = 'Modify me in AppModule';
-        $scope.Testing = 'I am testing';
+        $scope.AppName = 'Modify me in CoreModule';
 
         $scope.scrollSmoothToElementId = function (elementId) {
             ScrollSmooth.toElementId(elementId);

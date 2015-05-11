@@ -1,8 +1,9 @@
+- remove redundantes (nav.html to index.html, welcome.html -> index.html
 - Internationalisation
 - Unit tests
 - ES6?
-- add template in another template, for example, use a partial in page1
 - consider using link in directive for smooth scrolling
+
 
 -> test: {
 	directives: {

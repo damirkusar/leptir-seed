@@ -1,4 +1,4 @@
-angular.module('App').factory('Menus', ['$log', function (log) {
+angular.module('Core').factory('Menus', ['$log', function (log) {
     var menus = {};
 
     return {

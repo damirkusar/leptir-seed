@@ -3,7 +3,7 @@
 // Init the application configuration module for AngularJS application
 var ApplicationConfiguration = (function () {
     // Init module configuration options
-    var applicationModuleName = 'AppName';
+    var applicationModuleName = 'App';
     var applicationModuleVendorDependencies = ['ui.bootstrap', 'ui.utils', 'ui.router', 'ngAnimate'];
 
     // Add a new vertical module

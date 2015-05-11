@@ -1,6 +1,6 @@
 'use strict';
 
-require('./modules/app');
+require('./modules/core');
 require('./modules/welcome');
 require('./modules/page1');
 require('./partials/nav');

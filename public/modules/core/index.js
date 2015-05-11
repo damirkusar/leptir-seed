@@ -1,6 +1,6 @@
 'use strict';
 
-ApplicationConfiguration.registerModule('App');
+ApplicationConfiguration.registerModule('Core');
 
 require('./js/config/app.menu.js');
 require('./js/config/app.route.js');
