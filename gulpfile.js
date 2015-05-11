@@ -28,7 +28,7 @@ server.all('/*', function (req, res) {
 
 var paths = {
     destination_public: './dist/',
-    destination_module: './dist/modules/'
+    destination_modules: './dist/modules/'
 };
 
 // Clean task
@@ -60,7 +60,7 @@ gulp.task('views', function () {
         .pipe(refresh(lrServer)); // Tell the lrServer to refresh;
 
     gulp.src('./public/modules/**/views/*')
-        .pipe(gulp.dest('dist/modules/'))
+        .pipe(gulp.dest(paths.destination_modules))
         .pipe(refresh(lrServer)); // Tell the lrServer to refresh;
 });
 
@@ -81,7 +81,7 @@ gulp.task('javascript', function () {
         .pipe(refresh(lrServer)); // Tell the lrServer to refresh;
 
     gulp.src('./public/modules/**/*.js')
-        .pipe(gulp.dest('dist/modules/'))
+        .pipe(gulp.dest(paths.destination_modules))
         .pipe(refresh(lrServer)); // Tell the lrServer to refresh;
 });
 
@@ -112,7 +112,7 @@ gulp.task('browserify', function () {
 
 // Img task
 gulp.task('img', function () {
-    gulp.src('./public/modules/**/img/*').pipe(gulp.dest('dist/modules/'));
+    gulp.src('./public/modules/**/img/*').pipe(gulp.dest(paths.destination_modules));
 });
 
 // bower task
