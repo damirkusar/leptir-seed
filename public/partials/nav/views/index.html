@@ -15,8 +15,8 @@
                 <li data-ng-repeat="item in topBarItems | orderBy: 'position'" class="dropdown">
                     <a ui-sref="{{item.uiState}}"
                        data-ng-bind="item.title"
-                       ng-class="item.class == 'dropdown' ? 'dropdown': ''"
-                       ng-attr-data-toggle="{{item.class == 'dropdown' ? 'dropdown' : ''}}">
+                       ng-class="item.class == 'dropDown' ? 'dropdown': ''"
+                       ng-attr-data-toggle="{{item.class == 'dropDown' ? 'dropdown' : ''}}">
                     </a>
 
                     <ul class="dropdown-menu" role="menu">
