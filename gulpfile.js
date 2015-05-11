@@ -32,17 +32,7 @@ gulp.task('clean', function () {
         .pipe(clean());
 });
 
-// JSHint task
-gulp.task('lint', function () {
-    gulp.src([
-        './public/*.js',
-        './public/modules/*.js',
-        './public/modules/js/*.js'
-    ]).pipe(jshint())
-        // You can look into pretty reporters as well, but that's another story
-        .pipe(jshint.reporter('default'));
-});
-
+// Styles
 gulp.task('styles', function () {
     gulp.src('public/*.scss')
         // The onerror handler prevents Gulp from crashing when you make a mistake in your SASS
@@ -56,6 +46,40 @@ gulp.task('styles', function () {
         // These last two should look familiar now :)
         .pipe(gulp.dest('dist/'))
         .pipe(refresh(lrServer));
+});
+
+// Views task
+gulp.task('views', function () {
+    gulp.src('./public/index.html')
+        .pipe(gulp.dest('dist/'))
+        .pipe(refresh(lrServer)); // Tell the lrServer to refresh;
+
+    gulp.src('./public/modules/**/views/*')
+        .pipe(gulp.dest('dist/modules/'))
+        .pipe(refresh(lrServer)); // Tell the lrServer to refresh;
+});
+
+// JSHint task
+gulp.task('lint', function () {
+    gulp.src([
+        './public/*.js',
+        './public/modules/**/*.js',
+    ]).pipe(jshint())
+        // You can look into pretty reporters as well, but that's another story
+        .pipe(jshint.reporter('default'));
+});
+
+// JS task
+gulp.task('javascript', function () {
+    gulp.src('./public/*.js')
+        .pipe(gulp.dest('dist/'))
+        .pipe(refresh(lrServer)); // Tell the lrServer to refresh;
+
+    gulp.src([
+        './public/modules/**/*.js'
+    ])
+        .pipe(gulp.dest('dist/modules/'))
+        .pipe(refresh(lrServer)); // Tell the lrServer to refresh;
 });
 
 // Browserify task
@@ -83,31 +107,6 @@ gulp.task('browserify', function () {
         .pipe(refresh(lrServer));
 });
 
-// Views task
-gulp.task('views', function () {
-    gulp.src('./public/index.html')
-        .pipe(gulp.dest('dist/'))
-        .pipe(refresh(lrServer)); // Tell the lrServer to refresh;
-
-    gulp.src('./public/modules/**/views/*')
-        .pipe(gulp.dest('dist/modules/'))
-        .pipe(refresh(lrServer)); // Tell the lrServer to refresh;
-});
-
-// JS task
-gulp.task('javascript', function () {
-    gulp.src('./public/*.js')
-        .pipe(gulp.dest('dist/'))
-        .pipe(refresh(lrServer)); // Tell the lrServer to refresh;
-
-    gulp.src([
-        './public/modules/**/*.js',
-        './public/modules/**/js/*.js'
-    ])
-        .pipe(gulp.dest('dist/modules/'))
-        .pipe(refresh(lrServer)); // Tell the lrServer to refresh;
-});
-
 // Img task
 gulp.task('img', function () {
     gulp.src([
@@ -122,12 +121,14 @@ gulp.task('bower', function () {
     ]).pipe(gulp.dest('dist/bower_components/'));
 });
 
+// bower css task
 gulp.task('bower-css', function () {
     gulp.src([
         './public/bower_components/**/*.css'
     ]).pipe(gulp.dest('dist/bower_components/'));
 });
 
+// bower bootstrap task
 gulp.task('bower-bootstrap', function () {
     gulp.src([
         './public/bower_components/bootstrap/**/*.min.css'
@@ -148,11 +149,11 @@ gulp.task('watch', ['lint'], function () {
         'javascript'
     ]);
 
-    gulp.watch(['public/index.html', 'public/modules/**/views/*.html'], [
+    gulp.watch(['public/index.html', 'public/modules/**/*.html'], [
         'views'
     ]);
 
-    gulp.watch(['public/*.scss', 'public/**/*.scss'], [
+    gulp.watch(['public/*.scss', 'public/modules/**/*.scss'], [
         'styles'
     ]);
 });
@@ -163,8 +164,7 @@ gulp.task('log', function() {
 });
 
 gulp.task('default', ['dev', 'watch', 'log']);
-gulp.task('dev', ['build'], function () {
-});
+gulp.task('dev', ['build']);
 gulp.task('build', function () {
     runSequence(
         'clean',

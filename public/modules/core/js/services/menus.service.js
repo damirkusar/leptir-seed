@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('core').factory('Menus', ['$log', function (log) {
     var menus = {};
 

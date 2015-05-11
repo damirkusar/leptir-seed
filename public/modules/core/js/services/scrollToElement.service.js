@@ -1,3 +1,5 @@
+'use strict';
+
 var scrollSmoothToElementId;
 var scrollSmoothToTop;
 
@@ -14,7 +16,7 @@ jQuery(document).ready(function () {
              scrollTop: jQuery('body').scrollTop(0)
         }, 500);
         return false;
-    }
+    };
 });
 
 angular.module('core').factory('ScrollSmooth',function() {
