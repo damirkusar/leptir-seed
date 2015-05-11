@@ -75,9 +75,7 @@ gulp.task('javascript', function () {
         .pipe(gulp.dest('dist/'))
         .pipe(refresh(lrServer)); // Tell the lrServer to refresh;
 
-    gulp.src([
-        './public/modules/**/*.js'
-    ])
+    gulp.src('./public/modules/**/*.js')
         .pipe(gulp.dest('dist/modules/'))
         .pipe(refresh(lrServer)); // Tell the lrServer to refresh;
 });
@@ -109,30 +107,22 @@ gulp.task('browserify', function () {
 
 // Img task
 gulp.task('img', function () {
-    gulp.src([
-        './public/modules/**/img/*'
-    ]).pipe(gulp.dest('dist/modules/'));
+    gulp.src('./public/modules/**/img/*').pipe(gulp.dest('dist/modules/'));
 });
 
 // bower task
 gulp.task('bower', function () {
-    gulp.src([
-        './public/bower_components/**/*'
-    ]).pipe(gulp.dest('dist/bower_components/'));
+    gulp.src('./public/bower_components/**/*').pipe(gulp.dest('dist/bower_components/'));
 });
 
 // bower css task
 gulp.task('bower-css', function () {
-    gulp.src([
-        './public/bower_components/**/*.css'
-    ]).pipe(gulp.dest('dist/bower_components/'));
+    gulp.src('./public/bower_components/**/*.css').pipe(gulp.dest('dist/bower_components/'));
 });
 
 // bower bootstrap task
 gulp.task('bower-bootstrap', function () {
-    gulp.src([
-        './public/bower_components/bootstrap/**/*.min.css'
-    ]).pipe(gulp.dest('dist/bower_components/bootstrap/'));
+    gulp.src('./public/bower_components/bootstrap/**/*.min.css').pipe(gulp.dest('dist/bower_components/bootstrap/'));
 });
 
 gulp.task('watch', ['lint'], function () {
