@@ -100,7 +100,7 @@ gulp.task('browserify', function () {
         .pipe(concat('bower.js'))
         // Output it to our dist folder
         .pipe(gulp.dest(paths.destination_public))
-        .pipe(refresh(lrServer));
+        .pipe(refresh(lrServer)); // Tell the lrServer to refresh;
 
     gulp.src(paths.browserify[1])
         .pipe(browserify({
@@ -111,7 +111,7 @@ gulp.task('browserify', function () {
         .pipe(concat('app.js'))
         // Output it to our dist folder
         .pipe(gulp.dest(paths.destination_public))
-        .pipe(refresh(lrServer));
+        .pipe(refresh(lrServer)); // Tell the lrServer to refresh;
 });
 
 // Img task
@@ -142,7 +142,8 @@ gulp.task('watch', ['lint'], function () {
 
     gulp.watch(paths.scripts, [
         'lint',
-        'javascript'
+        'javascript',
+        'browserify'
     ]);
 
     gulp.watch(paths.views, [
