@@ -20,7 +20,7 @@
                     </a>
 
                     <ul class="dropdown-menu" role="menu">
-                        <li data-ng-repeat="subItem in item.items">
+                        <li data-ng-repeat="subItem in item.items | orderBy: 'position'">
                             <a ui-sref="{{subItem.uiState}}"
                                data-ng-bind="subItem.title">
                             </a>
