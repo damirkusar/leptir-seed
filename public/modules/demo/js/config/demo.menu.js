@@ -22,7 +22,7 @@ angular.module('demo').run(['Menus',
         Menus.addMenuItem('topBar', 'demo1Id', 'Demo', 'demo', '', '0');
 
         Menus.addMenuItem('topBar', 'demo2Id', 'Demo DropDown', '', 'dropDown', '1');
-        Menus.addSubMenuItem('topBar', 'demo2Id','sub1Id' ,'To Home', 'home', '0');
+        Menus.addSubMenuItem('topBar', 'demo2Id','sub1Id' ,'Go Home', 'home', '0');
         Menus.addSubMenuItem('topBar', 'demo2Id', 'sub2Id', 'To Demo', 'demo', '1');
     }
 ]);
