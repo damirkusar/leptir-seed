@@ -2,7 +2,7 @@
 
 angular.module('core')
     .config(function ($stateProvider, $urlRouterProvider) {
-        $urlRouterProvider.otherwise('/welcome');
+        $urlRouterProvider.otherwise('/');
 
         $stateProvider
             .state("root",
@@ -20,8 +20,18 @@ angular.module('core')
                         templateUrl: "modules/core/views/footer.html"
                     }
                 }
-            }
-        );
+            })
+            .state("home",
+            {
+                parent: "root",
+                url: "/",
+                views: {
+                    "": {
+                        controller: "CoreCtrl",
+                        templateUrl: "modules/core/views/index.html"
+                    }
+                }
+            });
     }).run(['$state', function ($state) {
         $state.transitionTo('welcome');
     }]);

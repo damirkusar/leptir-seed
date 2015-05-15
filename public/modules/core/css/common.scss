@@ -1,0 +1,93 @@
+/*phi = 1.61803398875
+line-height(phi) = font-size * phi
+line-width = line-height(phi)^2
+*/
+
+@mixin vertical-align {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+html, body {
+    height: 100vh;
+    width: 100vw;
+}
+
+html {
+    font-size: 67.5%;
+}
+
+body {
+    font-size: 1.4em;
+    line-height: 2.2652em;
+}
+
+h1 {
+    font-size: 2em;
+    line-height: 3.2360em;
+}
+
+h2 {
+    font-size: 1.5em;
+    line-height: 2.4270em;
+}
+
+h3 {
+    font-size: 1.17em;
+    line-height: 1.8930em;
+}
+
+h4 {
+    font-size: 1em;
+    line-height: 1.6180em;
+}
+
+h5 {
+    font-size: .83em;
+    line-height: 1.3430em;
+}
+
+h6 {
+    font-size: .75em;
+    line-height: 1.2135em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+}
+
+.center-h {
+    margin: auto;
+}
+
+.center-v{
+    @include vertical-align;
+}
+
+.full-height {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+.section-title-divider {
+    width: 5%;
+    height: 0.1em;
+    margin: -2em auto 2em auto;
+}
+
+section {
+    padding-top: 2em;
+}
+
+/* Bootstrap */
+.navbar {
+    height: 7%;
+}
+
+.container {
+    padding-bottom: 5em;
+}
