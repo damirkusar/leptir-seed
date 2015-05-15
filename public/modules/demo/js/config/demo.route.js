@@ -10,6 +10,10 @@ angular.module('demo').config(function($stateProvider) {
                 "": {
                     controller: "DemoCtrl",
                     templateUrl: "modules/demo/views/index.html"
+                },
+                "demo.partial@demo": {
+                    controller: "WelcomeCtrl",
+                    templateUrl: "modules/demo/views/partial.html"
                 }
             }
         });

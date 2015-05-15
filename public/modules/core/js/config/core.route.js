@@ -33,5 +33,5 @@ angular.module('core')
                 }
             });
     }).run(['$state', function ($state) {
-        $state.transitionTo('welcome');
+        $state.transitionTo('home');
     }]);
