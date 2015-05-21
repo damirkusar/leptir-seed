@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('core')
-    .config(function ($stateProvider, $urlRouterProvider) {
+    .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise('/');
 
         $stateProvider
@@ -32,6 +32,6 @@ angular.module('core')
                     }
                 }
             });
-    }).run(['$state', function ($state) {
+    }]).run(['$state', function ($state) {
         $state.transitionTo('home');
     }]);

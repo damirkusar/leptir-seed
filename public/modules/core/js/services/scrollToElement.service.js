@@ -19,7 +19,7 @@ jQuery(document).ready(function () {
     };
 });
 
-angular.module('core').factory('ScrollSmooth',function() {
+angular.module('core').factory('ScrollSmooth', [function() {
     return {
         toElementId: function (elementId) {
             scrollSmoothToElementId(elementId);
@@ -28,4 +28,4 @@ angular.module('core').factory('ScrollSmooth',function() {
             scrollSmoothToTop();
         }
     };
-});
+}]);

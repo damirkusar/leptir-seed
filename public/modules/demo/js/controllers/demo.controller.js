@@ -1,5 +1,5 @@
 'use strict';
 
-angular.module('demo').controller('DemoCtrl',function($scope){
+angular.module('demo').controller('DemoCtrl', ['$scope', function($scope){
     $scope.ModuleTest = "Modify me in Demo Module";
-});
+}]);

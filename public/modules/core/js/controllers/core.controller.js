@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('core')
-    .controller("CoreCtrl", function ($scope, ScrollSmooth) {
+    .controller("CoreCtrl", ['$scope', 'ScrollSmooth', function ($scope, ScrollSmooth) {
 
         $scope.AppName = 'Modify me in CoreModule';
         $scope.ModuleTest = 'Modify me in CoreModule';
@@ -13,4 +13,4 @@ angular.module('core')
         $scope.scrollSmoothToTop = function () {
             ScrollSmooth.toTop();
         };
-    });
+    }]);

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('demo').config(function($stateProvider) {
+angular.module('demo').config(['$stateProvider', function($stateProvider) {
     $stateProvider.
         state("demo",
         {
@@ -17,4 +17,4 @@ angular.module('demo').config(function($stateProvider) {
                 }
             }
         });
-});
+}]);
