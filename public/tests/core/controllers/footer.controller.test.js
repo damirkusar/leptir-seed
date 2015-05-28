@@ -2,9 +2,9 @@
 
 require('../../../app');
 
-var ctrlName = 'FooterCtrl';
+var objectToTest = 'FooterCtrl';
 
-describe(ctrlName, function () {
+describe(objectToTest, function () {
     var scope, createController;
 
     beforeEach(angular.mock.module('ui.router'));
@@ -13,7 +13,7 @@ describe(ctrlName, function () {
     beforeEach(inject(function ($rootScope, $controller) {
         scope = $rootScope.$new();
         createController = function() {
-            return $controller(ctrlName, {
+            return $controller(objectToTest, {
                 '$scope': scope
             });
         };

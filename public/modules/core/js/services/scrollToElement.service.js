@@ -5,9 +5,12 @@ var scrollSmoothToTop;
 
 jQuery(document).ready(function () {
     scrollSmoothToElementId = function(elementId){
-        jQuery('html, body').animate({
-            scrollTop: jQuery("#" + elementId).offset().top
-        }, 500);
+        if($("#" + elementId).length){
+            jQuery('html, body').animate({
+                scrollTop: jQuery("#" + elementId).offset().top
+            }, 500);
+        }
+
         return false;
     };
 
@@ -15,6 +18,7 @@ jQuery(document).ready(function () {
         jQuery('html, body').animate({
              scrollTop: jQuery('body').scrollTop(0)
         }, 500);
+
         return false;
     };
 });

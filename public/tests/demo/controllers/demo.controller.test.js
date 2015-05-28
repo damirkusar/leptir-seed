@@ -2,7 +2,9 @@
 
 require('../../../app');
 
-describe('DemoCtrl', function () {
+var objectToTest = 'DemoCtrl';
+
+describe(objectToTest, function () {
     var scope, createController;
 
     beforeEach(angular.mock.module('ui.router'));
@@ -12,7 +14,7 @@ describe('DemoCtrl', function () {
     beforeEach(inject(function ($rootScope, $controller) {
         scope = $rootScope.$new();
         createController = function() {
-            return $controller('DemoCtrl', {
+            return $controller(objectToTest, {
                 '$scope': scope
             });
         };
