@@ -23,4 +23,12 @@ describe(ctrlName, function () {
     it('PartialTest is correct', function() {
         expect(scope.PartialTest).toBe("Modify me in Core Module's Nav Controller");
     });
+
+    it('topBar is defined', function() {
+        expect(scope.topBar).toBeDefined();
+    });
+
+    it('topBarItems is defined', function() {
+        expect(scope.topBarItems).toBeDefined();
+    });
 });

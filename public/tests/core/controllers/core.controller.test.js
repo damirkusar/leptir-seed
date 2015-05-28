@@ -27,4 +27,12 @@ describe(ctrlName, function () {
     it('ModuleTest is correct', function() {
         expect(scope.ModuleTest).toBe('Modify me in Core Module');
     });
+
+    it('scrollSmoothToElementId is defined', function() {
+        expect(scope.scrollSmoothToElementId).toBeDefined();
+    });
+
+    it('scrollSmoothToTop is defined', function() {
+        expect(scope.scrollSmoothToTop).toBeDefined();
+    });
 });
