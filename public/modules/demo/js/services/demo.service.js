@@ -1,8 +1,9 @@
 'use strict';
 
 angular.module('demo').factory('DemoService', [function () {
-
-    return {
+var name;
+    return function () {
+        name = 'Damir';
     };
 
 }]);
