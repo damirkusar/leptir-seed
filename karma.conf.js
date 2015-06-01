@@ -26,7 +26,7 @@ module.exports = function(config) {
         //'public/bower.js',
         'public/app.config.js',
         //'public/app.js',
-        //'public/modules/**/*.js',
+        //'public/modules/**/*.html',
         'public/tests/**/*.js'
     ],
 /*
