@@ -1,5 +1,7 @@
 # Leptir - the seed for professional AngularJS apps
 
+Leptir means in croatian language Butterfly :)
+
 `AngularJS seed structured in modules with Gulp, Browserify, Angular-UI, Bootstrap, SCSS, Karma & Jasmine & out of the box.`
 
 I started this project because I wanted to create my own AngularJS seed which fits my needs. I hope, that it will serve yours too.
@@ -179,7 +181,7 @@ leptir yeoman generator. Will create a yeoman generator based on this seed.
 
 ## Feedback & Improvements
 
-If you miss something or you think i should change or add some feature, please let me know. 
+If you miss something or you think i should change or add some feature, please let me know.
 
 
 
