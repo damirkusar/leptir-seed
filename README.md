@@ -1,4 +1,6 @@
-# Leptir Seed - the seed for AngularJS apps
+# Leptir Seed - the seed for structured & feature-rich AngularJS apps
+
+'AngularJS seed structured in modules with Gulp, Browserify, Angular-UI, Bootstrap, SCSS, Karma & Jasmine & out of the box.'
 
 I started this project because I wanted to create my own AngularJS seed which fits my needs. I hope, that it will serve yours too.
 
