@@ -171,6 +171,18 @@ Until I do not have a yeoman generator for this seed, this is a bit a manual pro
 
 
 
+## Comming Soon
+
+leptir yeoman generator. Will create a yeoman generator based on this seed.
+
+
+
+## Feedback & Improvements
+
+If you miss something or you think i should change or add some feature, please let me know. 
+
+
+
 ## Contact
 
 For more information & contact form please check out http://kusar.ch/ or http://damirkusar.ch/
