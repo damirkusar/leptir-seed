@@ -29,14 +29,14 @@ You can download and install node.js from [http://nodejs.org/](http://nodejs.org
 Clone the repository using [git][git]:
 
 ```
-git clone https://github.com/damirkusar/???.git
-cd ???
+git clone https://github.com/damirkusar/leptir-angular-seed.git
+cd leptir-angular-seed
 ```
 
 If you just want to clone the repository without the commit history then you can do:
 
 ```bash
-git clone --depth=1 https://github.com/damirkusar/???.git <your-project-name>
+git clone --depth=1 https://github.com/damirkusar/leptir-angular-seed.git <your-project-name>
 ```
 
 The `depth=1` tells git to only pull down one commit of historical data.
