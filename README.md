@@ -155,17 +155,17 @@ This will find the latest versions that match the version ranges specified in th
 
 Until I do not have a yeoman generator for this seed, this is a bit a manual process.
 
-- [] Copy the demo folder in modules and tests and give it a name
-- [] Rename the scss and js files. All these files have a demo.xxx.js, so change demo to your module name.
-- [] In index.js, directly in the root of the module, register the correct module name and adapt the file names.
-    - [] By the way, if you add a new js class, you need to add that to that file too
-- [] In projects root, add the module to app.js
-- [] In projects root, add the scss's of the module to app.scss
-    - [] By the way, if you add a new scss class, you need to add that to that file too
-- [] Adapt the namings in the config, controllers, directives and services files as well
-- [] Adapt the unit tests
-- [] Configure your routes in config/xxx.route.js
-- [] Configure your menus in config/xxx.menu.js
+- [ ] Copy the demo folder in modules and tests and give it a name
+- [ ] Rename the scss and js files. All these files have a demo.xxx.js, so change demo to your module name.
+- [ ] In index.js, directly in the root of the module, register the correct module name and adapt the file names.
+    - [ ] By the way, if you add a new js class, you need to add that to that file too
+- [ ] In projects root, add the module to app.js
+- [ ] In projects root, add the scss's of the module to app.scss
+    - [ ] By the way, if you add a new scss class, you need to add that to that file too
+- [ ] Adapt the namings in the config, controllers, directives and services files as well
+- [ ] Adapt the unit tests
+- [ ] Configure your routes in config/xxx.route.js
+- [ ] Configure your menus in config/xxx.menu.js
 
 
 
