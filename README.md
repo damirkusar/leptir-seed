@@ -1,6 +1,6 @@
 # Leptir - the seed for professional AngularJS apps
 
-Leptir means in croatian language Butterfly :)
+Leptir means in croatian language Butterfly. 
 
 `AngularJS seed structured in modules with Gulp, Browserify, Angular-UI, Bootstrap, SCSS, Karma & Jasmine & out of the box.`
 
