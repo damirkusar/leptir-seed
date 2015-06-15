@@ -3,16 +3,14 @@
 require('../../../app');
 
 var objectToTest = 'DemoRouterConfig';
+var dependencies = require('../test.dependencies');
 
 describe(objectToTest, function () {
     var rootScope,
         state,
         location;
 
-    beforeEach(angular.mock.module('ui.router'));
-    beforeEach(angular.mock.module('pascalprecht.translate'));
-    beforeEach(angular.mock.module('core'));
-    beforeEach(angular.mock.module('demo'));
+    dependencies.configureDepencencies();
 
     beforeEach(inject(function ($rootScope, $state, $location) {
         rootScope = $rootScope;

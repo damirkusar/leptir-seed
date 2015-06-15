@@ -1,15 +1,14 @@
 'use strict';
 
 require('../../../app');
+var dependencies = require('../test.dependencies');
 
 var objectToTest = 'CoreService';
 
 describe(objectToTest, function () {
     var service;
 
-    beforeEach(angular.mock.module('ui.router'));
-    beforeEach(angular.mock.module('pascalprecht.translate'));
-    beforeEach(angular.mock.module('core'));
+    dependencies.configureDepencencies();
 
     beforeEach(inject(function (CoreService) {
         service = CoreService;

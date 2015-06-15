@@ -1,6 +1,7 @@
 'use strict';
 
 require('../../../app');
+var dependencies = require('../test.dependencies');
 
 var objectToTest = 'CoreMenuConfig';
 
@@ -8,9 +9,7 @@ describe(objectToTest, function () {
     var menu,
         menuId = 'topBar';
 
-    beforeEach(angular.mock.module('ui.router'));
-    beforeEach(angular.mock.module('pascalprecht.translate'));
-    beforeEach(angular.mock.module('core'));
+    dependencies.configureDepencencies();
 
     beforeEach(inject(function (Menus) {
         menu = Menus;

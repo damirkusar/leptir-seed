@@ -1,15 +1,14 @@
 'use strict';
 
 require('../../../app');
+var dependencies = require('../test.dependencies');
 
 var objectToTest = 'Menus';
 
 describe(objectToTest, function () {
     var service, testMenu;
 
-    beforeEach(angular.mock.module('ui.router'));
-    beforeEach(angular.mock.module('pascalprecht.translate'));
-    beforeEach(angular.mock.module('core'));
+    dependencies.configureDepencencies();
 
     beforeEach(inject(function (Menus) {
         service = Menus;

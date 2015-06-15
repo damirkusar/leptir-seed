@@ -3,15 +3,13 @@
 require('../../../app');
 
 var objectToTest = 'DemoMenuConfig';
+var dependencies = require('../test.dependencies');
 
 describe(objectToTest, function () {
     var menu,
         menuId = 'topBar';
 
-    beforeEach(angular.mock.module('ui.router'));
-    beforeEach(angular.mock.module('pascalprecht.translate'));
-    beforeEach(angular.mock.module('core'));
-    beforeEach(angular.mock.module('demo'));
+    dependencies.configureDepencencies();
 
     beforeEach(inject(function (Menus) {
         menu = Menus;
