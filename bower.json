@@ -21,6 +21,7 @@
     "angular-ui-utils": "~0.1",
     "angular-bootstrap": "~0.10",
     "moment": "~2.5",
-    "font-awesome": "~4.0"
+    "font-awesome": "~4.0",
+    "angular-translate": "~2.7.2"
   }
 }

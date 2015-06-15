@@ -2,6 +2,7 @@
 
 ApplicationConfiguration.registerModule('core');
 
+require('./js/config/core.locales.js');
 require('./js/config/core.menu.js');
 require('./js/config/core.route.js');
 require('./js/controllers/core.controller.js');

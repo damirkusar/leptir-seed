@@ -11,8 +11,28 @@
         </div>
 
         <div id="navigation" class="collapse navbar-collapse">
+
             <ul class="nav navbar-nav navbar-right pull-right">
-                <li data-ng-repeat="item in topBarItems | orderBy: 'position'" class="dropdown">
+                <li data-ng-repeat="item in localeMenuItems | orderBy: 'position'" class="dropdown">
+                    <a ui-sref="{{item.uiState}}"
+                       data-ng-bind="item.title"
+                       ng-class="item.class == 'dropDown' ? 'dropdown': ''"
+                       ng-attr-data-toggle="{{item.class == 'dropDown' ? 'dropdown' : ''}}"
+                       >
+                    </a>
+
+                    <ul class="dropdown-menu" role="menu">
+                        <li data-ng-repeat="subItem in item.items | orderBy: 'position'">
+                            <a ng-click="changeLanguage(subItem.uiState)"
+                               data-ng-bind="subItem.title">
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right pull-right">
+                <li data-ng-repeat="item in topBarMenuItems | orderBy: 'position'" class="dropdown">
                     <a ui-sref="{{item.uiState}}"
                        data-ng-bind="item.title"
                        ng-class="item.class == 'dropDown' ? 'dropdown': ''"
@@ -26,7 +46,6 @@
                             </a>
                         </li>
                     </ul>
-
                 </li>
             </ul>
         </div>

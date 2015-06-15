@@ -13,3 +13,4 @@ require('angular-mocks');
 require('angular-resource');
 require('angular-ui-router');
 require('angular-ui-utils');
+require('angular-translate');

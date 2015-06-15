@@ -105,6 +105,7 @@ angular.module('core').factory('Menus', ['$log', function (log) {
         },
         configMenus: function(){
             this.addMenu('topBar');
+            this.addMenu('locales');
         },
         resetMenus: function(){
             menus = {};

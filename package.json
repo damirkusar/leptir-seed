@@ -54,7 +54,8 @@
     "angular-mocks": "./public/bower_components/angular-mocks/angular-mocks.js",
     "angular-resource": "./public/bower_components/angular-resource/angular-resource.min.js",
     "angular-ui-router": "./public/bower_components/angular-ui-router/release/angular-ui-router.min.js",
-    "angular-ui-utils": "./public/bower_components/angular-ui-utils/ui-utils.min.js"
+    "angular-ui-utils": "./public/bower_components/angular-ui-utils/ui-utils.min.js",
+    "angular-translate": "./public/bower_components/angular-translate/angular-translate.min.js"
   },
   "browserify-shim": {
     "jquery": {
@@ -116,6 +117,12 @@
       "exports": "angular"
     },
     "angular-ui-utils": {
+      "depends": [
+        "angular"
+      ],
+      "exports": "null"
+    },
+    "angular-translate": {
       "depends": [
         "angular"
       ],
