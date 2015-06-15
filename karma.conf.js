@@ -21,6 +21,8 @@ module.exports = function(config) {
         'public/bower_components/angular-resource/angular-resource.js',
         'public/bower_components/angular-ui-router/release/angular-ui-router.js',
         'public/bower_components/angular-translate/angular-translate.js',
+        'public/bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js',
+        'public/bower_components/angular-translate-loader-url/angular-translate-loader-url.min.js',
 
         'public/app.config.js',
         'public/tests/**/*.js'

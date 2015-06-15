@@ -1,3 +1,4 @@
 {
-  "core.views.index.title": "Hallo Core!"
+  "coreHeadline": "Hey, das ist im core modul ein headline text in Deutsch!",
+  "demoHeadline": "Hey, das ist im demo modul ein headline text in Deutsch!"
 }

@@ -5,6 +5,6 @@ angular.module('core')
         Menus.configMenus();
 
         Menus.addMenuItem('locales', 'localId1', 'Switch Language', '', 'dropDown', '1');
-        Menus.addSubMenuItem('locales', 'localId1','en' ,'English', 'en', '0');
-        Menus.addSubMenuItem('locales', 'localId1', 'de', 'Deutsch', 'de', '1');
+        Menus.addSubMenuItem('locales', 'localId1','en' ,'English', 'en_US', '0');
+        Menus.addSubMenuItem('locales', 'localId1', 'de', 'Deutsch', 'de_CH', '1');
     }]);

@@ -32,6 +32,7 @@ var paths = {
     views: ['./public/index.html', './public/modules/**/*.html'],
     styles: ['./public/*.scss', './public/modules/**/*.scss'],
     img: ['./public/modules/**/img/*'],
+    resources: ['./public/modules/**/resources/*'],
     bower: ['./public/bower_components/**/*', './public/bower_components/**/*.css', './public/bower_components/bootstrap/**/*.min.css'],
     destination_public: './dist/',
     destination_modules: './dist/modules/',
@@ -119,6 +120,11 @@ gulp.task('img', function () {
     gulp.src(paths.img).pipe(gulp.dest(paths.destination_modules));
 });
 
+// Resources task
+gulp.task('resources', function () {
+    gulp.src(paths.resources).pipe(gulp.dest(paths.destination_modules));
+});
+
 // bower task
 gulp.task('bower', function () {
     gulp.src(paths.bower[0]).pipe(gulp.dest(paths.destination_bower[0]));
@@ -150,6 +156,10 @@ gulp.task('watch', ['lint'], function () {
         'views'
     ]);
 
+    gulp.watch(paths.resources, [
+        'resources'
+    ]);
+
     gulp.watch(paths.styles, [
         'styles'
     ]);
@@ -165,7 +175,7 @@ gulp.task('dev', ['build']);
 gulp.task('build', function () {
     runSequence(
         'clean',
-        ['views', 'styles', 'img', 'lint', 'javascript', 'browserify'],
+        ['views', 'styles', 'img', 'resources', 'lint', 'javascript', 'browserify'],
         'bower-css'
     );
 });

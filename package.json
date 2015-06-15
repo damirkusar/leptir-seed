@@ -55,7 +55,11 @@
     "angular-resource": "./public/bower_components/angular-resource/angular-resource.min.js",
     "angular-ui-router": "./public/bower_components/angular-ui-router/release/angular-ui-router.min.js",
     "angular-ui-utils": "./public/bower_components/angular-ui-utils/ui-utils.min.js",
-    "angular-translate": "./public/bower_components/angular-translate/angular-translate.min.js"
+    "angular-translate": "./public/bower_components/angular-translate/angular-translate.min.js",
+    "angular-translate-loader-static-files": "./public/bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js",
+    "angular-translate-loader-url": "./public/bower_components/angular-translate-loader-url/angular-translate-loader-url.min.js",
+    "angular-translate-storage-cookie": "./public/bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.min.js",
+    "angular-translate-storage-local": "./public/bower_components/angular-translate-storage-local/angular-translate-storage-local.min.js"
   },
   "browserify-shim": {
     "jquery": {
@@ -127,6 +131,31 @@
         "angular"
       ],
       "exports": "null"
+    },
+    "angular-translate-loader-static-files": {
+      "depends": [
+        "angular"
+      ],
+      "exports": "null"
+    },
+    "angular-translate-loader-url": {
+      "depends": [
+        "angular"
+      ],
+      "exports": "null"
+    },
+    "angular-translate-storage-cookie": {
+      "depends": [
+        "angular"
+      ],
+      "exports": "null"
+    },
+    "angular-translate-storage-local": {
+      "depends": [
+        "angular"
+      ],
+      "exports": "null"
     }
+
   }
 }
