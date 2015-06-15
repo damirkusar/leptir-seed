@@ -12,7 +12,7 @@ angular.module('demo').config(['$stateProvider', function($stateProvider) {
                     templateUrl: "modules/demo/views/index.html"
                 },
                 "demo.partial@demo": {
-                    controller: "WelcomeCtrl",
+                    controller: "DemoCtrl",
                     templateUrl: "modules/demo/views/partial.html"
                 }
             }
