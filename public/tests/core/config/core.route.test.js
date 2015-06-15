@@ -10,6 +10,7 @@ describe(objectToTest, function () {
         location;
 
     beforeEach(angular.mock.module('ui.router'));
+    beforeEach(angular.mock.module('pascalprecht.translate'));
     beforeEach(angular.mock.module('core'));
 
     beforeEach(inject(function ($rootScope, $state, $location) {

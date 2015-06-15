@@ -9,6 +9,7 @@ describe(objectToTest, function () {
         menuId = 'topBar';
 
     beforeEach(angular.mock.module('ui.router'));
+    beforeEach(angular.mock.module('pascalprecht.translate'));
     beforeEach(angular.mock.module('core'));
     beforeEach(angular.mock.module('demo'));
 
