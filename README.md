@@ -13,6 +13,7 @@ The project is structured into modules along with examples of angular services, 
 All this is separated to keep the module maintainable & clear.
 
 ## Getting Started
+
 To get started, just clone the repository and install the node & bower dependencies.
 
 
@@ -26,7 +27,7 @@ You can download and install node.js from [http://nodejs.org/](http://nodejs.org
 
 
 
-### Clone repository
+### Clone Repository
 
 Clone the repository using [git][git]:
 
@@ -86,7 +87,7 @@ Now browse to the app at `http://localhost:5000`.
 
 
 
-### Run the Application in production
+### Run the Application in Production
 
 If you want to run your project on a common web server, you will need to build the project.
 You can also make changes in the gulpfile if you need to.
@@ -105,6 +106,8 @@ Now, your app can be accessed through the internet as well.
 ## Testing
 
 This project uses [Karma Test Runner][karma] and [Jasmine][jasmine] for their Unit tests.
+
+
 
 ### Running Unit Tests
 
@@ -173,6 +176,27 @@ Until I do not have a yeoman generator for this seed, this is a bit a manual pro
 
 
 
+## Translate your App
+
+This seed is prepared to translate your application in as many languages as you want. German (de-CH) and englisch (en-US) are included to see how you can add more languages. 
+
+The language files are located under public -> modules -> core -> resources. There you will find currently two files (locale-de_CH.json & locale-en_US.json). Under this folder you can add as many files as you want. 
+
+The setup done for this is in the core modules config folder. There you will find the core.locales.js file, where is setup the location where the files are stored and which language is the default. You can see that it is "en-US", this is regarding the file without the prefix "-locale" and the suffix ".json".
+
+For a demo purpose, i created a new menu under config -> core.menu.js and told in the "subMenuItemUiState" parameter to which language i want to switch. The nav.html under core -> views and the nav.controller are prepared to handle that correctly. 
+
+now, you have different ways how you want to translate your text in your html's. These are the two ways which i used as an example:
+
+```
+<h4>{{ 'coreHeadline' | translate }}</h4>
+<h4 translate="coreHeadline"></h4>
+```
+
+Be aware, that coreHeadline must be in the locale files, otherwise just coreHeadline will be shown instead of the text you want to have in. 
+
+
+
 ## Comming Soon
 
 leptir yeoman generator. Will create a yeoman generator based on this seed.
@@ -182,6 +206,14 @@ leptir yeoman generator. Will create a yeoman generator based on this seed.
 ## Feedback & Improvements
 
 If you miss something or you think i should change or add some feature, please let me know.
+
+
+
+## Donation
+
+If you like this seed and you think it is worht to donate something, please feel free to do that via the following link:
+
+[Donate via Paypal][donate]
 
 
 
@@ -200,5 +232,6 @@ For more information & contact form please check out http://kusar.ch/ or http://
 [protractor]: https://github.com/angular/protractor
 [jasmine]: http://jasmine.github.io
 [karma]: http://karma-runner.github.io
+[donate]: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=damir%40kusar%2ech&lc=US&item_name=Damir%20Kusar&currency_code=USD&bn=PP-DonationsBF%3abtn_donate_LG%2egif%3aNonHosted
 [kusar]: http://kusar.ch/
 [damirkusar]: http://damirkusar.ch/
