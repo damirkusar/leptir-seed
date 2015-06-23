@@ -1,9 +1,8 @@
 'use strict';
 
-require('../../../app');
+var dependencies = require('../test.dependencies');
 
 var objectToTest = 'DemoMenuConfig';
-var dependencies = require('../test.dependencies');
 
 describe(objectToTest, function () {
     var menu,

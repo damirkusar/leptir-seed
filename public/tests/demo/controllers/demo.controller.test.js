@@ -1,9 +1,8 @@
 'use strict';
 
-require('../../../app');
+var dependencies = require('../test.dependencies');
 
 var testObjectName = 'DemoCtrl';
-var dependencies = require('../test.dependencies');
 
 describe(testObjectName, function () {
     var scope, createController;

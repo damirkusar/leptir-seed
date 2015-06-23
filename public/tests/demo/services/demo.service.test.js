@@ -1,6 +1,5 @@
 'use strict';
 
-require('../../../app');
 var dependencies = require('../test.dependencies');
 
 var objectToTest = 'DemoService';
