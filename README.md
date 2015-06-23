@@ -163,11 +163,10 @@ watch the source and test files for changes and then re-run the tests whenever a
 This is the recommended strategy. If your unit tests are being run every time you save a file then
 you receive instant feedback on any changes that break the expected code functionality.
 
-This can be changed in the 'karma.conf.js' file in these to properties like this:
+If you want to run it just once, simply start your tests with this command
 
 ```bash
-autoWatch: false,
-singleRun: true,
+karma start --single-run
 ```
 
 
