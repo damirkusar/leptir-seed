@@ -2,15 +2,17 @@
 
 Leptir means in croatian language Butterfly. 
 
-`AngularJS seed structured in modules with Gulp, Browserify, Angular-UI, Angular-Translate, Bootstrap, SCSS, Karma & Jasmine & out of the box.`
+`AngularJS, Gulp, Browserify, Angular-UI, Angular-Translate, Bootstrap, SCSS, Karma & Jasmine & ftp deployment out of the box.`
 
-I started this project because I wanted to create my own AngularJS seed which fits my needs. I hope, that it will serve yours too.
+I create from time to time some small websites for different purposes or just to test something, I run always into the same problems, either I have to develop everything from scratch or the seeds available are not serving my needs how I want to have a project structured and how I want to use it. So I thought, why not create a seed which serves my needs and points to a direction to be used for professional AngularJS applications and can also be used by others. 
+I hope it will serve your needs too.
 
-This project is a more feature-rich and structured starting point for professional web applications.
-It integrates AngularJS with Gulp, Browserify, Angular-UI, Bootstrap, SCSS, Karma & Jasmine out of the box.
+This seed is structured in independent modules to keep it maintainable & clear, has Gulp as the build system, Browserify for the dependencies, NodeJs for the node packages, Angular-UI for routing, Angular-Translate for internationalization support, Bootstrap for faster UI dev, SCSS for better CSS handling, Karma + Jasmine for the unit tests and ftp deployment. 
+This seed is fully featured and easy to use for your next professional web application. 
 
-The project is structured into modules along with examples of angular services, directives, controllers and config such as routes & menu.
-All this is separated to keep the module maintainable & clear.
+Each module has examples of angular services, directives, controllers and config such as routes & menu including unit tests.
+
+
 
 ## Getting Started
 
