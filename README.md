@@ -103,6 +103,38 @@ Now, your app can be accessed through the internet as well.
 
 
 
+### Deploy the Application
+
+You can also automate the deployment to a server via ftp. No need to copy the files manually to a server. 
+For that, please change the settings deplos task settings in the gulpfile.js. 
+ 
+Mandatory settings to change: 
+- host
+- user
+- password
+
+then also change the destination folders
+- conn.newer
+- conn.dest
+
+with conn.newer we are uploading just files which are newer than the already deployed and with conn.dest we are uploading the files. 
+
+First we need to build our project if not done yet. 
+
+```bash
+gulp build
+```
+
+This will create a new folder dist.
+
+Then, if your settings are changed and correct, you can deploy the app with
+
+```bash
+gulp deploy
+```
+
+
+
 ## Testing
 
 This project uses [Karma Test Runner][karma] and [Jasmine][jasmine] for their Unit tests.

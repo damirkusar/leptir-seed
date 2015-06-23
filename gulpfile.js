@@ -6,7 +6,8 @@ var gulp = require('gulp'),
     clean = require('gulp-clean'),
     sass = require('gulp-sass'),
     autoPrefixer = require('gulp-autoprefixer'),
-    runSequence = require('run-sequence');
+    runSequence = require('run-sequence'),
+    ftp = require( 'vinyl-ftp' );
 
 var express = require('express'),
     refresh = require('gulp-livereload'),
@@ -171,7 +172,9 @@ gulp.task('log', function() {
 });
 
 gulp.task('default', ['dev', 'watch', 'log']);
+
 gulp.task('dev', ['build']);
+
 gulp.task('build', function () {
     runSequence(
         'clean',
@@ -179,3 +182,21 @@ gulp.task('build', function () {
         'bower-css'
     );
 });
+
+gulp.task('deploy', function() {
+    var conn = ftp.create( {
+        host:     'domain.ch',
+        user:     'user',
+        password: 'passw0rd',
+        parallel: 1,
+        log: gutil.log
+    } );
+
+    var globs = [
+        'dist/**'
+    ];
+
+    return gulp.src(globs, { buffer: true })
+        .pipe(conn.newer('/uploadFolder/')) // only upload newer files
+        .pipe(conn.dest('/uploadFolder/'));
+} );

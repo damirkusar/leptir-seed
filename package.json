@@ -24,9 +24,9 @@
     "jasmine-jquery": "^2.0.6",
     "jquery": "^2.1.4",
     "karma": "^0.12.33",
-    "karma-cli": "^0.0.4",
     "karma-browserify": "^4.2.1",
     "karma-chai": "^0.1.0",
+    "karma-cli": "^0.0.4",
     "karma-jasmine": "^0.3.5",
     "karma-mocha": "^0.1.10",
     "karma-phantomjs-launcher": "^0.1.4",
@@ -34,7 +34,8 @@
     "node-sass": "~2.0.0-beta",
     "run-sequence": "^1.0.2",
     "shelljs": "^0.2.6",
-    "tiny-lr": "^0.1.5"
+    "tiny-lr": "^0.1.5",
+    "vinyl-ftp": "^0.4.1"
   },
   "browserify": {
     "transform": [
@@ -156,6 +157,5 @@
       ],
       "exports": "null"
     }
-
   }
 }
