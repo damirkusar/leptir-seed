@@ -16,5 +16,3 @@ require('angular-ui-utils');
 require('angular-translate');
 require('angular-translate-loader-static-files');
 require('angular-translate-loader-url');
-require('angular-translate-storage-cookie');
-require('angular-translate-storage-local');
