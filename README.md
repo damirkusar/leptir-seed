@@ -60,6 +60,12 @@ First, we will install the node packages via
 npm install
 ```
 
+now let's install gulp and karma-cli globally
+```bash
+npm install -g gulp
+npm install -g karma-cli
+```
+
 then the bower packages via
 ```bash
 bower install
