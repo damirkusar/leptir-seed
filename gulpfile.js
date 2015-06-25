@@ -22,7 +22,7 @@ var server = express();
 server.use(liveReload({port: liveReloadPort}));
 // Use our 'dist' folder as rootFolder
 server.use(express.static('./dist'));
-// Because I like HTML5 pushstate .. this redirects everything back to our index.html
+// this redirects everything back to our index.html
 server.all('/*', function (req, res) {
     res.sendFile('index.html', {root: 'dist'});
 });
@@ -178,7 +178,8 @@ gulp.task('dev', ['build']);
 gulp.task('build', function () {
     runSequence(
         'clean',
-        ['views', 'styles', 'img', 'resources', 'lint', 'javascript', 'browserify'],
+        ['views', 'styles', 'img', 'resources', 'lint', 'javascript'],
+        'browserify',
         'bower-css'
     );
 });
