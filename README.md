@@ -1,14 +1,14 @@
 # Leptir - the seed for professional AngularJS apps
 
-Leptir means in croatian language Butterfly. 
+Leptir means in croatian language Butterfly.
 
 `AngularJS, Gulp, Browserify, Angular-UI, Angular-Translate, Bootstrap, SCSS, Karma & Jasmine & ftp deployment out of the box.`
 
-I create from time to time some small websites for different purposes or just to test something, I run always into the same problems, either I have to develop everything from scratch or the seeds available are not serving my needs how I want to have a project structured and how I want to use it. So I thought, why not create a seed which serves my needs and points to a direction to be used for professional AngularJS applications and can also be used by others. 
+I create from time to time some small websites for different purposes or just to test something, I run always into the same problems, either I have to develop everything from scratch or the seeds available are not serving my needs how I want to have a project structured and how I want to use it. So I thought, why not create a seed which serves my needs and points to a direction to be used for professional AngularJS applications and can also be used by others.
 I hope it will serve your needs too.
 
-This seed is structured in independent modules to keep it maintainable & clear, has Gulp as the build system, Browserify for the dependencies, NodeJs for the node packages, Angular-UI for routing, Angular-Translate for internationalization support, Bootstrap for faster UI dev, SCSS for better CSS handling, Karma + Jasmine for the unit tests and ftp deployment. 
-This seed is fully featured and easy to use for your next professional web application. 
+This seed is structured in independent modules to keep it maintainable & clear, has Gulp as the build system, Browserify for the dependencies, NodeJs for the node packages, Angular-UI for routing, Angular-Translate for internationalization support, Bootstrap for faster UI dev, SCSS for better CSS handling, Karma + Jasmine for the unit tests and ftp deployment.
+This seed is fully featured and easy to use for your next professional web application.
 
 Each module has examples of angular services, directives, controllers and config such as routes & menu including unit tests.
 
@@ -66,6 +66,11 @@ npm install -g gulp
 npm install -g karma-cli
 ```
 
+also install bower globally if not yet installed
+```bash
+npm install -g bower
+```
+
 then the bower packages via
 ```bash
 bower install
@@ -113,10 +118,10 @@ Now, your app can be accessed through the internet as well.
 
 ### Deploy the Application
 
-You can also automate the deployment to a server via ftp. No need to copy the files manually to a server. 
-For that, please change the settings deplos task settings in the gulpfile.js. 
- 
-Mandatory settings to change: 
+You can also automate the deployment to a server via ftp. No need to copy the files manually to a server.
+For that, please change the settings deplos task settings in the gulpfile.js.
+
+Mandatory settings to change:
 - host
 - user
 - password
@@ -125,9 +130,9 @@ then also change the destination folders
 - conn.newer
 - conn.dest
 
-with conn.newer we are uploading just files which are newer than the already deployed and with conn.dest we are uploading the files. 
+with conn.newer we are uploading just files which are newer than the already deployed and with conn.dest we are uploading the files.
 
-First we need to build our project if not done yet. 
+First we need to build our project if not done yet.
 
 ```bash
 gulp build
@@ -217,13 +222,13 @@ Until I do not have a yeoman generator for this seed, this is a bit a manual pro
 
 ## Translate your App
 
-This seed is prepared to translate your application in as many languages as you want. German (de-CH) and englisch (en-US) are included to see how you can add more languages. 
+This seed is prepared to translate your application in as many languages as you want. German (de-CH) and englisch (en-US) are included to see how you can add more languages.
 
-The language files are located under public -> modules -> core -> resources. There you will find currently two files (locale-de_CH.json & locale-en_US.json). Under this folder you can add as many files as you want. 
+The language files are located under public -> modules -> core -> resources. There you will find currently two files (locale-de_CH.json & locale-en_US.json). Under this folder you can add as many files as you want.
 
 The setup done for this is in the core modules config folder. There you will find the core.locales.js file, where is setup the location where the files are stored and which language is the default. You can see that it is "en-US", this is regarding the file without the prefix "-locale" and the suffix ".json".
 
-For a demo purpose, i created a new menu under config -> core.menu.js and told in the "subMenuItemUiState" parameter to which language i want to switch. The nav.html under core -> views and the nav.controller are prepared to handle that correctly. 
+For a demo purpose, i created a new menu under config -> core.menu.js and told in the "subMenuItemUiState" parameter to which language i want to switch. The nav.html under core -> views and the nav.controller are prepared to handle that correctly.
 
 now, you have different ways how you want to translate your text in your html's. These are the two ways which i used as an example:
 
@@ -232,7 +237,7 @@ now, you have different ways how you want to translate your text in your html's.
 <h4 translate="coreHeadline"></h4>
 ```
 
-Be aware, that coreHeadline must be in the locale files, otherwise just coreHeadline will be shown instead of the text you want to have in. 
+Be aware, that coreHeadline must be in the locale files, otherwise just coreHeadline will be shown instead of the text you want to have in.
 
 
 
