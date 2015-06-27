@@ -1,13 +1,14 @@
 var gulp = require('gulp'),
     gutil = require('gulp-util'),
     jshint = require('gulp-jshint'),
-    browserify = require('gulp-browserify'),
+    browserify = require('browserify'),
     concat = require('gulp-concat'),
     clean = require('gulp-clean'),
     sass = require('gulp-sass'),
     autoPrefixer = require('gulp-autoprefixer'),
     runSequence = require('run-sequence'),
-    ftp = require( 'vinyl-ftp' );
+    ftp = require( 'vinyl-ftp' ),
+    transform = require('vinyl-transform');
 
 var express = require('express'),
     refresh = require('gulp-livereload'),
@@ -93,27 +94,14 @@ gulp.task('javascript', function () {
 
 // Browserify task
 gulp.task('browserify', function () {
-    gulp.src(paths.browserify[0])
-        .pipe(browserify({
-            insertGlobals: true,
-            debug: true
-        }))
-        // Bundle to a single file
-        .pipe(concat('bower.js'))
-        // Output it to our dist folder
-        .pipe(gulp.dest(paths.destination_public))
-        .pipe(refresh(lrServer)); // Tell the lrServer to refresh;
+  var browserified = transform(function(filename) {
+    var b = browserify(filename);
+    return b.bundle();
+  });
 
-    gulp.src(paths.browserify[1])
-        .pipe(browserify({
-            insertGlobals: true,
-            debug: true
-        }))
-        // Bundle to a single file
-        .pipe(concat('app.js'))
-        // Output it to our dist folder
-        .pipe(gulp.dest(paths.destination_public))
-        .pipe(refresh(lrServer)); // Tell the lrServer to refresh;
+  return gulp.src(paths.browserify)
+    .pipe(browserified)
+    .pipe(gulp.dest(paths.destination_public));
 });
 
 // Img task
