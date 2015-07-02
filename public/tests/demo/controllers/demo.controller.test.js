@@ -20,6 +20,6 @@ describe(testObjectName, function () {
     }));
 
     it('ModuleTest is correct', function() {
-        expect(scope.ModuleTest).toBe('Modify me in Demo Module');
+        expect(scope.ModuleTest).toBe('Modify me in demo Module');
     });
 });

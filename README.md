@@ -4,7 +4,7 @@ Leptir means in croatian language Butterfly.
 
 `AngularJS, Gulp, Browserify, Angular-UI, Angular-Translate, Bootstrap, SCSS, Karma & Jasmine & ftp deployment out of the box.`
 
-I create from time to time some small websites for different purposes or just to test something, I run always into the same problems, either I have to develop everything from scratch or the seeds available are not serving my needs how I want to have a project structured and how I want to use it. So I thought, why not create a seed which serves my needs and points to a direction to be used for professional AngularJS applications and can also be used by others.
+I create often websites for different purposes or just to test something, I run always into the same problems, either I have to develop everything from scratch or the seeds available are not serving my needs how I want to have a project structured and how I want to use it. So I thought, why not create a seed which serves my needs and points to a direction to be used for professional AngularJS applications and can also be used by others.
 I hope it will serve your needs too.
 
 This seed is structured in independent modules to keep it maintainable & clear, has Gulp as the build system, Browserify for the dependencies, NodeJs for the node packages, Angular-UI for routing, Angular-Translate for internationalization support, Bootstrap for faster UI dev, SCSS for better CSS handling, Karma + Jasmine for the unit tests and ftp deployment.
@@ -241,10 +241,9 @@ Be aware, that coreHeadline must be in the locale files, otherwise just coreHead
 
 
 
-## Comming Soon
+## Yeoman Generator
 
-leptir yeoman generator. Will create a yeoman generator based on this seed.
-
+I created for this seed also a yeoman-generator. Please take a look at: https://github.com/damirkusar/leptir-generator
 
 
 ## Feedback & Improvements
@@ -263,7 +262,32 @@ If you like this seed and you think it is worht to donate something, please feel
 
 ## Contact
 
-For more information & contact form please check out http://kusar.ch/ or http://damirkusar.ch/
+For more information & contact form please check out http://kusar.ch or http://damirkusar.ch
+
+
+
+## License
+The MIT License (MIT)
+
+Copyright (c) 2015 Damir Kusar: damir@kusar.ch
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
 
 
 

@@ -1,6 +1,6 @@
 {
-  "name": "leptir-angular-seed",
-  "version": "2.0.1",
+  "name": "leptir-seed",
+  "version": "2.1.0",
   "main": "index.html",
   "directory": "public/bower_components",
   "ignore": [

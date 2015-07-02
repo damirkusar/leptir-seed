@@ -3,7 +3,7 @@ var gulp = require('gulp'),
     jshint = require('gulp-jshint'),
     browserify = require('browserify'),
     concat = require('gulp-concat'),
-    clean = require('gulp-clean'),
+    del = require('del'),
     sass = require('gulp-sass'),
     autoPrefixer = require('gulp-autoprefixer'),
     runSequence = require('run-sequence'),
@@ -43,8 +43,9 @@ var paths = {
 
 // Clean task
 gulp.task('clean', function () {
-    return gulp.src(paths.destination_public, {read: false}) // much faster
-        .pipe(clean());
+    del.sync([paths.destination_public], function(err, paths){
+      console.log('Deleted files/folders:\n', paths.join('\n'));
+    });
 });
 
 // Styles

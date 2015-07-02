@@ -2,5 +2,5 @@
 
 angular.module('demo')
     .controller('DemoCtrl', ['$scope', function($scope){
-        $scope.ModuleTest = "Modify me in Demo Module";
+        $scope.ModuleTest = "Modify me in demo Module";
 }]);
