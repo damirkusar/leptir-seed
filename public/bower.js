@@ -1,18 +1,18 @@
 'use strict';
 
-require('jquery');
-require('bootstrap');
-require('moment');
-require('underscore');
-require('angular');
-require('angular-animate');
-require('angular-bootstrap');
-require('angular-bootstrap-tpls');
-require('angular-cookies');
-require('angular-mocks');
-require('angular-resource');
-require('angular-ui-router');
-require('angular-ui-utils');
-require('angular-translate');
-require('angular-translate-loader-static-files');
-require('angular-translate-loader-url');
+require('jquery'); // jshint ignore:line
+require('bootstrap'); // jshint ignore:line
+require('moment'); // jshint ignore:line
+require('underscore'); // jshint ignore:line
+require('angular'); // jshint ignore:line
+require('angular-animate'); // jshint ignore:line
+require('angular-bootstrap'); // jshint ignore:line
+require('angular-bootstrap-tpls'); // jshint ignore:line
+require('angular-cookies'); // jshint ignore:line
+require('angular-mocks'); // jshint ignore:line
+require('angular-resource'); // jshint ignore:line
+require('angular-ui-router'); // jshint ignore:line
+require('angular-ui-utils'); // jshint ignore:line
+require('angular-translate'); // jshint ignore:line
+require('angular-translate-loader-static-files'); // jshint ignore:line
+require('angular-translate-loader-url'); // jshint ignore:line

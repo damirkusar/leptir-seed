@@ -3,11 +3,11 @@
 var scrollSmoothToElementId;
 var scrollSmoothToTop;
 
-jQuery(document).ready(function () {
+jQuery(document).ready(function () { // jshint ignore:line
     scrollSmoothToElementId = function(elementId){
-        if($("#" + elementId).length){
-            jQuery('html, body').animate({
-                scrollTop: jQuery("#" + elementId).offset().top
+        if($("#" + elementId).length){ // jshint ignore:line
+            jQuery('html, body').animate({ // jshint ignore:line
+                scrollTop: jQuery("#" + elementId).offset().top // jshint ignore:line
             }, 500);
         }
 
@@ -15,8 +15,8 @@ jQuery(document).ready(function () {
     };
 
     scrollSmoothToTop = function(){
-        jQuery('html, body').animate({
-             scrollTop: jQuery('body').scrollTop(0)
+        jQuery('html, body').animate({ // jshint ignore:line
+             scrollTop: jQuery('body').scrollTop(0) // jshint ignore:line
         }, 500);
 
         return false;
