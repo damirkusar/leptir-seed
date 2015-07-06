@@ -1,8 +1,10 @@
 'use strict';
 
-angular.module('core').directive('CoreDirective', [function () {
+angular.module('core').directive('coreDirective', [function () {
 
-    return {
-    };
+  return {
+    restrict: 'AE', // A: Attribute, E: Element
+    template: '<div><span>Directive in: core, with name: coreDirective</span></div>'
+  };
 
 }]);
