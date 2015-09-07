@@ -30,7 +30,7 @@ server.all('/*', function (req, res) {
 
 var paths = {
     scripts: ['./public/*.js', './public/modules/**/*.js'],
-    browserify: ['./public/bower.js', './public/app.js'],
+    browserify: ['./public/browserify.js', './public/app.js'],
     views: ['./public/index.html', './public/modules/**/*.html'],
     styles: ['./public/*.scss', './public/modules/**/*.scss'],
     img: ['./public/modules/**/img/*'],

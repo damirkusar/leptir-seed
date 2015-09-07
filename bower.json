@@ -1,6 +1,6 @@
 {
   "name": "leptir-seed",
-  "version": "2.3.0",
+  "version": "2.5.0",
   "main": "index.html",
   "directory": "public/bower_components",
   "ignore": [
@@ -12,12 +12,7 @@
     "jquery": "~2.0",
     "underscore": "~1.5",
     "bootstrap": "~3.1",
-    "angular": "~1.2",
     "angular-ui-router": "~0.2",
-    "angular-animate": "~1.2",
-    "angular-resource": "~1.2",
-    "angular-cookies": "~1.2",
-    "angular-mocks": "~1.2",
     "angular-ui-utils": "~0.1",
     "angular-bootstrap": "~0.10",
     "moment": "~2.5",
