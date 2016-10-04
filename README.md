@@ -4,13 +4,9 @@ Leptir means in croatian language Butterfly.
 
 `AngularJS, Gulp, Browserify, Angular-UI, Angular-Translate, Bootstrap, SCSS, Karma & Jasmine & ftp deployment out of the box.`
 
-I create often websites for different purposes or just to test something, I run always into the same problems, either I have to develop everything from scratch or the seeds available are not serving my needs how I want to have a project structured and how I want to use it. So I thought, why not create a seed which serves my needs and points to a direction to be used for professional AngularJS applications and can also be used by others.
-I hope it will serve your needs too.
+This seed is using AngularJS components. This seed is fully featured and easy to use for your next professional web application.
 
-This seed is structured in independent modules to keep it maintainable & clear, has Gulp as the build system, Browserify for the dependencies, NodeJs for the node packages, Angular-UI for routing, Angular-Translate for internationalization support, Bootstrap for faster UI dev, SCSS for better CSS handling, Karma + Jasmine for the unit tests and ftp deployment.
-This seed is fully featured and easy to use for your next professional web application.
-
-Each module has examples of angular services, directives, controllers and config such as routes & menu including unit tests.
+It has examples of angular services, directives, controllers, config such as routes & menu and components including unit tests.
 
 
 
@@ -79,12 +75,7 @@ bower install
 You will see that you have now two new folders in your project.
 
 * `node_modules` - contains the npm packages
-* `public/bower_components` - contains the client-side packages
-
-*Note that the `bower_components` folder would normally be installed in the root folder but
-I changed this location through the `.bowerrc` file.  Putting it in the public folder makes
-it easier to serve the files by a webserver.*
-
+* `bower_components` - contains the client-side packages
 
 
 ### Run the Application
@@ -96,7 +87,7 @@ You can start the sever during development simply with
 gulp
 ```
 
-Now browse to the app at `http://localhost:5000`.
+Now browse to the app at `http://localhost:1337`.
 
 
 
@@ -119,7 +110,7 @@ Now, your app can be accessed through the internet as well.
 ### Deploy the Application
 
 You can also automate the deployment to a server via ftp. No need to copy the files manually to a server.
-For that, please change the settings deplos task settings in the gulpfile.js.
+For that, please change the deploy task settings in the gulpfile.js.
 
 Mandatory settings to change:
 - host
@@ -158,9 +149,8 @@ This project uses [Karma Test Runner][karma] and [Jasmine][jasmine] for their Un
 
 Unit tests are preconfigured. The configuration is done in Karma configuration file `karma.conf.js`.
 
-* the unit tests are in the test folder on the same level as the modules are and js code is equally structured.
-You can name your tests as you want, because all files are considered to be tests under the tests folder.
-But it makes sense to name it as `xxx.test.js`.*
+* the unit tests are in the test folder on the same level as the components are and js code is equally structured.
+You can name your tests as you want, but you have to follow this guideline: `*.spec.js`.
 
 To run the tests, you can open up a new terminal window located in the root of your project and run the unit tests with:
 
@@ -206,17 +196,15 @@ This will find the latest versions that match the version ranges specified in th
 
 Until I do not have a yeoman generator for this seed, this is a bit a manual process.
 
-- [ ] Copy the demo folder in modules and tests and give it a name
-- [ ] Rename the scss and js files. All these files have a demo.xxx.js, so change demo to your module name.
-- [ ] In index.js, directly in the root of the module, register the correct module name and adapt the file names.
+- [ ] Create a folder for your components or service under the corresponding folder
+- [ ] Create a index.js, directly in the root of the folder, register the correct module name and add the file names you have in this folder.
     - [ ] By the way, if you add a new js class, you need to add that to that file too
 - [ ] In projects root, add the module to app.js
-- [ ] In projects root, add the scss's of the module to app.scss
+- [ ] If you add a new scss file, add the scss to app.scss in the projects root folder
     - [ ] By the way, if you add a new scss class, you need to add that to that file too
-- [ ] Adapt the namings in the config, controllers, directives and services files as well
-- [ ] Adapt the unit tests
-- [ ] Configure your routes in config/xxx.route.js
-- [ ] Configure your menus in config/xxx.menu.js
+- [ ] Create / Adapt the unit tests
+- [ ] Configure your routes in xxx.route.js
+- [ ] Configure your menus in xxx.menu.js
 
 
 
@@ -224,26 +212,25 @@ Until I do not have a yeoman generator for this seed, this is a bit a manual pro
 
 This seed is prepared to translate your application in as many languages as you want. German (de-CH) and englisch (en-US) are included to see how you can add more languages.
 
-The language files are located under public -> modules -> core -> resources. There you will find currently two files (locale-de_CH.json & locale-en_US.json). Under this folder you can add as many files as you want.
+The language files are located under public -> translations. There you will find currently two files (locale-de_CH.json & locale-en_US.json) as well folders with component names, in case you want to structure it this way. Adapt for that the app.config.js file. Under this folder you can add as many files as you want.
 
-The setup done for this is in the core modules config folder. There you will find the core.locales.js file, where is setup the location where the files are stored and which language is the default. You can see that it is "en-US", this is regarding the file without the prefix "-locale" and the suffix ".json".
+The setup done for this is in the app.config.js file.
 
-For a demo purpose, i created a new menu under config -> core.menu.js and told in the "subMenuItemUiState" parameter to which language i want to switch. The nav.html under core -> views and the nav.controller are prepared to handle that correctly.
-
-now, you have different ways how you want to translate your text in your html's. These are the two ways which i used as an example:
+Now, you have different ways how you want to translate your text in your html's. These are the two ways which i used as an example:
 
 ```
-<h4>{{ 'coreHeadline' | translate }}</h4>
-<h4 translate="coreHeadline"></h4>
+<h4>{{ 'homeHeadline' | translate }}</h4>
+<h4 translate="homeHeadline"></h4>
 ```
 
-Be aware, that coreHeadline must be in the locale files, otherwise just coreHeadline will be shown instead of the text you want to have in.
+Be aware, that homeHeadline must be in the locale files, otherwise just homeHeadline will be shown instead of the text you want to have in.
 
 
 
 ## Yeoman Generator
 
-I created for this seed also a yeoman-generator. Please take a look at: https://github.com/damirkusar/leptir-generator
+I created for this seed also a yeoman-generator. BUT, THE GENERATOR USES AN OLD VERSION OF THIS SEED. Please take a look at:
+https://github.com/damirkusar/leptir-generator
 
 
 ## Feedback & Improvements
@@ -254,7 +241,7 @@ If you miss something or you think i should change or add some feature, please l
 
 ## Donation
 
-If you like this seed and you think it is worht to donate something, please feel free to do that via the following link:
+If you like this seed and you think it is worth to donate something, please feel free to do that via the following link:
 
 [Donate via Paypal][donate]
 

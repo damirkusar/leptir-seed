@@ -1,4 +1,7 @@
 'use strict';
 
-require('./modules/core'); // jshint ignore:line
-require('./modules/demo'); // jshint ignore:line
+require('./services'); // jshint ignore:line
+require('./components/navigation'); // jshint ignore:line
+require('./components/footer'); // jshint ignore:line
+require('./components/home'); // jshint ignore:line
+require('./components/demo'); // jshint ignore:line

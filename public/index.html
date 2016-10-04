@@ -4,17 +4,17 @@
         <title>leptir-seed</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta charset="utf-8">
-        <link rel='stylesheet' type='text/css' href='bower.css'>
+        <link rel='stylesheet' type='text/css' href='libraries.css'>
         <link rel='stylesheet' type='text/css' href='app.css'>
     </head>
-    <body data-ng-controller="CoreCtrl">
+    <body>
 
-        <div ui-view="nav"></div>
+        <navigation></navigation>
         <div ui-view></div>
-        <div ui-view="footer"></div>
-
+        <footer></footer>
+        
         <!-- Bower and Application JS -->
-        <script src="browserify.js"></script>
+        <script src="libraries.js"></script>
         <script src="app.config.js"></script>
         <script src="app.js"></script>
     </body>

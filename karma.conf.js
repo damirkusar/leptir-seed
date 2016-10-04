@@ -1,7 +1,5 @@
 // Karma configuration
-// Generated on Thu May 28 2015 10:14:15 GMT+0200 (CEST)
-
-//var applicationConfiguration = require('./config/config');
+// Generated on Sun Sep 25 2016 16:46:24 GMT+0200 (CEST)
 
 module.exports = function(config) {
   config.set({
@@ -15,30 +13,48 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-        'node_modules/angular/angular.js',
-        'node_modules/angular-mocks/angular-mocks.js',
-        'node_modules/angular-resource/angular-resource.js',
+      'node_modules/angular/angular.js',
+      'node_modules/angular-animate/angular-animate.js',
+      'node_modules/angular-mocks/angular-mocks.js',
+      'node_modules/angular-resource/angular-resource.js',
+      'node_modules/angular-ui-router/release/angular-ui-router.js',
+      'node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js',
 
-        'public/bower_components/jquery/jquery.js',
-        'public/bower_components/angular-ui-router/release/angular-ui-router.js',
-        'public/bower_components/angular-translate/angular-translate.js',
-        'public/bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js',
-        'public/bower_components/angular-translate-loader-url/angular-translate-loader-url.min.js',
+      'bower_components/jquery/dist/jquery.js',
+      'bower_components/angular-translate/angular-translate.js',
+      'bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js',
+      'bower_components/angular-translate-loader-url/angular-translate-loader-url.min.js',
+      'bower_components/angular-translate-loader-partial/angular-translate-loader-partial.min.js',
 
-        'public/app.config.js',
-        'public/tests/**/*.js'
+      'public/app.config.js',
+      'public/app.js',
+      
+      'public/**/*.html',
+
+      'tests/**/test.dependencies.js',
+      'tests/**/*.spec.js'
     ],
 
     // list of files to exclude
     exclude: [
-
     ],
 
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-        'public/bower.js': [ 'browserify' ],
-        'public/tests/**/*.js': [ 'browserify' ]
+      'public/app.js': [ 'browserify' ],
+      'public/tests/**/spec.js': [ 'browserify' ],
+      'public/tests/**/test.dependencies.js': [ 'browserify' ],
+      "public/**/*.html": ["ng-html2js"]
+    },
+
+    ngHtml2JsPreprocessor: {
+      // If your build process changes the path to your templates,
+      // use stripPrefix and prependPrefix to adjust it.
+      stripPrefix: "public",
+
+      // the name of the Angular module to create
+      moduleName: "app.html"
     },
 
     // test results reporter to use
@@ -57,24 +73,28 @@ module.exports = function(config) {
     logLevel: config.LOG_ERROR,
 
     // enable / disable watching file and executing tests whenever any file changes
-      autoWatch: true,
-      singleRun: false,
+    autoWatch: true,
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['PhantomJS'],
-
-      plugins: [
+    browsers: ['Chrome'],
+    
+    plugins: [
           'karma-browserify',
           'karma-jasmine',
           'karma-mocha',
-          'karma-phantomjs-launcher'
+          'karma-chrome-launcher',
+          'karma-phantomjs2-launcher',
+          'karma-ng-html2js-preprocessor' 
       ],
 
-      // browserify configuration
-      browserify: {
+    browserify: {
           debug: true,
           transform: [ 'browserify-shim' ]
-      }
-  });
-};
+      },
+
+    // Continuous Integration mode
+    // if true, Karma captures browsers, runs the tests and exits
+    singleRun: false
+  })
+}

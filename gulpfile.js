@@ -15,7 +15,7 @@ var express = require('express'),
     lrServer = require('tiny-lr')(),
     liveReload = require('connect-livereload'),
     liveReloadPort = 35729,
-    serverPort = 5000;
+    serverPort = 1337;
 
 // Set up an express server (but not starting it yet)
 var server = express();
@@ -29,15 +29,17 @@ server.all('/*', function (req, res) {
 });
 
 var paths = {
-    scripts: ['./public/*.js', './public/modules/**/*.js'],
-    browserify: ['./public/browserify.js', './public/app.js'],
-    views: ['./public/index.html', './public/modules/**/*.html'],
-    styles: ['./public/*.scss', './public/modules/**/*.scss'],
-    img: ['./public/modules/**/img/*'],
-    resources: ['./public/modules/**/resources/*'],
-    bower: ['./public/bower_components/**/*', './public/bower_components/**/*.css', './public/bower_components/bootstrap/**/*.min.css'],
+    scripts: ['./public/*.js', './public/components/**/*.js'],
+    browserify: ['./public/libraries.js', './public/app.js'],
+    views: ['./public/index.html', './public/components/**/*.html'],
+    styles: ['./public/*.scss', './public/styles/*.scss'],
+    img: ['./public/images/*'],
+    translations: ['./public/translations/**/*'],
+    bower: ['./bower_components/**/*', './bower_components/**/*.css', './bower_components/bootstrap/**/*.min.css'],
     destination_public: './dist/',
-    destination_modules: './dist/modules/',
+    destination_components: './dist/components/',
+    destination_translations: './dist/translations/',
+    destination_images: './dist/images/',
     destination_bower: ['./dist/bower_components/', './dist/bower_components/bootstrap/']
 };
 
@@ -71,7 +73,7 @@ gulp.task('views', function () {
         .pipe(refresh(lrServer)); // Tell the lrServer to refresh;
 
     gulp.src(paths.views[1])
-        .pipe(gulp.dest(paths.destination_modules))
+        .pipe(gulp.dest(paths.destination_components))
         .pipe(refresh(lrServer)); // Tell the lrServer to refresh;
 });
 
@@ -89,7 +91,7 @@ gulp.task('javascript', function () {
         .pipe(refresh(lrServer)); // Tell the lrServer to refresh;
 
     gulp.src(paths.scripts[1])
-        .pipe(gulp.dest(paths.destination_modules))
+        .pipe(gulp.dest(paths.destination_components))
         .pipe(refresh(lrServer)); // Tell the lrServer to refresh;
 });
 
@@ -107,12 +109,12 @@ gulp.task('browserify', function () {
 
 // Img task
 gulp.task('img', function () {
-    gulp.src(paths.img).pipe(gulp.dest(paths.destination_modules));
+    gulp.src(paths.img).pipe(gulp.dest(paths.destination_images));
 });
 
-// Resources task
-gulp.task('resources', function () {
-    gulp.src(paths.resources).pipe(gulp.dest(paths.destination_modules));
+// translations task
+gulp.task('translations', function () {
+    gulp.src(paths.translations).pipe(gulp.dest(paths.destination_translations));
 });
 
 // bower task
@@ -167,7 +169,7 @@ gulp.task('dev', ['build']);
 gulp.task('build', function () {
     runSequence(
         'clean',
-        ['views', 'styles', 'img', 'resources', 'lint', 'javascript'],
+        ['views', 'styles', 'img', 'translations', 'lint', 'javascript'],
         'browserify',
         'bower-css'
     );
