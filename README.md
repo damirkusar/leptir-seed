@@ -1,6 +1,6 @@
 # DEPRECATED - NOT UNDER DEVELOPMENT ANYMORE
 
-# Leptir - the seed for professional AngularJS apps
+## Leptir - the seed for professional AngularJS apps
 
 Leptir means in croatian language Butterfly.
 
